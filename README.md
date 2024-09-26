@@ -50,9 +50,10 @@ The rise of embedded systems and their integration into critical infrastructure 
 
 ## References
 - **Xen on ARM with Virtualization Extension**: [White Paper](https://wiki.xenproject.org/wiki/Xen_ARM_with_Virtualization_Extensions_whitepaper)
-- **Xen Support for TrustZone**: [Detailed Implementation](https://xenproject.readthedocs.io/en/latest/architecture/virtualization.html#implementation-details)
+- **Xen Support for TrustZone**: [Detailed Implementation]
+(https://optee.readthedocs.io/en/latest/architecture/virtualization.html#implementation-details)
 - **QEMU System-ARM with Xen**: [Tutorial](https://wiki.xenproject.org/wiki/Xen_ARM_with_Virtualization_Extensions/qemu-system-aarch64)
 - **Additional Resources**:
   - [Medium Article on Xen and OP-TEE](https://medium.com/@denisobrezko/xen-on-arm-and-qemu-1654f24de2f5)
-  - [GitHub Repository for Xen-ARM-OPTEE](https://gist.github.com/stewdx/110f43e0cc1d905f6cdc4e71d08d35e)
+  - [Environment Setup Script](https://gist.github.com/stewdk/110f43e0cc1d905fc6ed4c7e10d8d35e)
 
