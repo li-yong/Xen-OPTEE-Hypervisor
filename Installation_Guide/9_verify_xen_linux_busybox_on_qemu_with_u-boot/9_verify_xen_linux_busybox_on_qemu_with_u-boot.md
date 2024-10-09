@@ -43,8 +43,7 @@ booti 0x49000000 - 0x44000000
 
 This time, Linux no longer panic, Xen give you option to activate the Linux console.
 ```
-Please press Enter to activate this console. [   11.544030] platform gpio-keys: deferred probe pending
-
+Please press Enter to activate this console.
 ```
 
 ## Output Review
@@ -81,9 +80,6 @@ dev      linuxrc  root     sys
 ~ # which grep
 /bin/grep
 
-
 ~ # ls -l /bin/grep
 lrwxrwxrwx    1 1000     1000             7 Sep 27 01:29 /bin/grep -> busybox
-
-
 ```
