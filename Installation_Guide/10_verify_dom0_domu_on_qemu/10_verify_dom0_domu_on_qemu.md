@@ -66,7 +66,7 @@ booti 0x50000000 - 0x44000000
 
 ## Switch Console between XEN/DOM0/DOM1
 ```
-# (XEN) *** Serial input to DOM1 (type 'CTRL-a' three times to switch input)
+(XEN) *** Serial input to DOM1 (type 'CTRL-a' three times to switch input)
 (XEN) *** Serial input to Xen (type 'CTRL-a' three times to switch input)
 (XEN) *** Serial input to DOM0 (type 'CTRL-a' three times to switch input)
 ```
