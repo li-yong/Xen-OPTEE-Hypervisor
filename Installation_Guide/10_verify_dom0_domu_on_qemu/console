@@ -102,8 +102,6 @@ Working FDT set to 44000000
 libfdt fdt_setprop(): FDT_ERR_NOSPACE
 => fdt set /chosen/domU1/module@1 reg <0x58000000 0x122a54>
 libfdt fdt_setprop(): FDT_ERR_NOSPACE
-=> booti 0x49000000 - 0x44000000
-Bad Linux ARM64 Image magic!
 => booti 0x50000000 - 0x44000000
 ## Flattened Device Tree blob at 44000000
    Booting using the fdt blob at 0x44000000
