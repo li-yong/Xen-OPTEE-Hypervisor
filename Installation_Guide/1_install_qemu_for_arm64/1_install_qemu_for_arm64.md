@@ -13,6 +13,14 @@ DISTRIB_DESCRIPTION="Ubuntu 24.04.1 LTS"
 # Install QEMU
 ```
 $ sudo apt install qemu-system-arm
+Reading package lists... Done 
+Building dependency tree... Done 
+Need to get 33.8 MB of archives. 
+After this operation, 611 MB of additional disk space will be used. 
+Do you want to continue? [Y/n] Y 
+
+
+$ sudo apt install qemu-system-arm
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
