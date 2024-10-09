@@ -108,3 +108,5 @@ Starting kernel ...
 [    0.858567] ---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0) ]---
 
 ```
+
+You can `Ctrl+C` or `pkill -f qemu-system-aarch64` to stop the Qemu.
