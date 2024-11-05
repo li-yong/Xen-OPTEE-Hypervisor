@@ -49,11 +49,7 @@ qemu-system-aarch64 \
     -nographic \
     -no-reboot \
     -chardev socket,id=qemu-monitor,host=localhost,port=7777,server,nowait,telnet \
-    -mon qemu-monitor,mode=readline,\
-    -device e1000, netdev=net0
-    -netdev user, hostfwd=tcp::2222-:22
-    
-
+    -mon qemu-monitor,mode=readline
 ```
 
 ## Call U-Boot
@@ -97,8 +93,6 @@ fdt set /chosen/domU1/module@1 reg <0x58000000 0x122a54>
 
 
 booti 0x50000000 - 0x44000000
-
-
 ```
 
 ## Switch Console between XEN/DOM0/DOM1
