@@ -59,24 +59,29 @@ apt install -y \
     zlib1g-dev
 ```
 
-## Install Git Repo
+## Install Git Repo 
 The command installs the `repo` tool by downloading it and making it executable.
-curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo && chmod a+x /bin/repo
+```
+curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo 
+chmod a+x /bin/repo
+```
 
 ## Fetch qemu_v8 manifest
-Initializes a repo environment by setting up the OP-TEE repository's configuration.After running this command, the environment is prepared for syncing all necessary OP-TEE repositories using `repo sync`.
+Initializes a repo environment by setting up the OP-TEE repository's configuration. After running this command, the environment is prepared for syncing all necessary OP-TEE repositories using `repo sync`.
 
 ```
-mkdir /optee
-cd /optee
-repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml && repo sync -j10
+export OPTEE_WORK_DIR=/home/xenonarm/optee
+mkdir -pv $OPTEE_WORK_DIR
+cd $OPTEE_WORK_DIR
+
+repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml && repo sync -j `nproc`
 ```
 
 ## Build toolchains
 In this setup, running `make toolchains` is essential because the development machine (x86 architecture) cannot directly compile code for the target ARM architecture without using specific cross-compilation toolchains. This command will download and build the `aarch32`,`aarch64` and `rust` toolchains that enable the x86 host system to produce ARM-compatible binaries, which are required for OP-TEE. Even though QEMU will emulate the ARM CPU, the binaries themselves must still be ARM-compatible to function correctly within that emulated environment. By running `make toolchains`, we ensure compatibility with the ARM architecture and prepare the environment for a seamless emulation experience.
 
 ```
-cd /optee/build
+cd ${OPTEE_WORK_DIR}/build
 make -j `nproc` toolchains
 ```
 
@@ -109,7 +114,7 @@ By this step, all the binaries have been built. Next we are going to invoke QEMU
 make XEN_BOOT=y QEMU_VIRTFS_ENABLE=y QEMU_USERNET_ENABLE=y run-only
 ```
 
-In the above `make`, the core action is to launch the QEMU. 
+In the above `make`, the core action is to launch the QEMU along with a bunch of parameters. 
 ```
 nc -z  127.0.0.1 54320 || /usr/bin/gnome-terminal -t "Normal World" -x /home/xenonarm/optee/build/../build/soc_term.py 54320 &
 nc -z  127.0.0.1 54321 || /usr/bin/gnome-terminal -t "Secure World" -x /home/xenonarm/optee/build/../build/soc_term.py 54321 &
