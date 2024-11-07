@@ -99,13 +99,13 @@ This will spend significant time comparing to the previous steps, as it is actua
 make -j `nproc`
 ```
 
-### Performance Benchmark consideration
+<!-- ### Performance Benchmark consideration
 OP-TEE is being a solution spanning over several architectural layers. OP-TEE [Benchmark-framework](https://optee.readthedocs.io/en/3.21.0/debug/benchmark.html#benchmark-framework) enables performance latency observation over difference layers, it provides detailed and precise profiling information for each layer. 
 
 If you intend to use Benchmark framework, OP-TEE should be rebuilt with the CFG_TEE_BENCHMARK flag enabled so that the benchmark framework will be enabled in all architectural layers. 
 ```
 make CFG_TEE_BENCHMARK=y -j `nproc`
-```
+``` -->
 
  
 ## Run the Application 
