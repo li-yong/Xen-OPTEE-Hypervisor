@@ -1,0 +1,14 @@
+ln -sf /home/xenonarm/optee/build/../out-br/images/rootfs.cpio.gz /home/xenonarm/optee/build/../out/bin/
+
+* QEMU is now waiting to start the execution
+* Start execution with either a 'c' followed by <enter> in the QEMU console or
+* attach a debugger and continue from there.
+*
+* To run OP-TEE tests, use the xtest command in the 'Normal World' terminal
+* Enter 'xtest -h' for help.
+
+cd /home/xenonarm/optee/build/../out/bin && /home/xenonarm/optee/build/../qemu/build/aarch64-softmmu/qemu-system-aarch64 \
+	-nographic -smp 4 -cpu cortex-a57 -d unimp -semihosting-config enable=on,target=native -m 3072 -bios bl1.bin -initrd rootfs.cpio.gz -kernel Image -append 'console=ttyAMA0,38400 keep_bootcon root=/dev/vda2 ' -drive if=none,file=/home/xenonarm/optee/build/../out/bin/xen.ext4,format=raw,id=hd1 -device virtio-blk-device,drive=hd1 -object rng-random,filename=/dev/urandom,id=rng0 -device virtio-rng-pci,rng=rng0,max-bytes=1024,period=1000 -netdev user,id=vmnic -device virtio-net-device,netdev=vmnic -machine virt,acpi=off,secure=on,mte=off,gic-version=3,virtualization=true  -fsdev local,id=fsdev0,path=/home/xenonarm/optee/build/..,security_model=none -device virtio-9p-device,fsdev=fsdev0,mount_tag=host -s -S -serial tcp:127.0.0.1:54320 -serial tcp:127.0.0.1:54321 
+QEMU 8.1.2 monitor - type 'help' for more information
+(qemu) c[K
+(qemu) 

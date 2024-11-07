@@ -149,8 +149,8 @@ QEMU 8.1.2 monitor - type 'help' for more information
 ```
 
 
-### Normal World Boot process.
-#### QEMU Load the Trusted Firmware and U-Boot.
+<!-- ### Normal World Boot process.-->
+### QEMU Load the Trusted Firmware and U-Boot.
 ```
 listening on port 54320
 soc_term: accepted fd 4
@@ -170,7 +170,7 @@ NOTICE:  BL31: v2.10.0	(release):v2.10
 NOTICE:  BL31: Built : 21:28:06, Oct 17 2024
 ```
 
-#### U-Boot start.
+### U-Boot start.
 ```
 U-Boot 2023.07.02 (Oct 17 2024 - 21:26:26 -0400)
 
@@ -179,7 +179,26 @@ Core:  51 devices, 14 uclasses, devicetree: board
 Flash: 32 MiB
 ```
 
-#### XEN start
+### Secure World start
+```
+listening on port 54321
+soc_term: accepted fd 4
+
+
+I/TC: OP-TEE version: 4.4.0-rc1-2-g1868eb206 (gcc version 11.3.1 20220712 (Arm GNU Toolchain 11.3.Rel1)) #1 Fri Oct 18 01:26:07 UTC 2024 aarch64
+I/TC: WARNING: This OP-TEE configuration might be insecure!
+I/TC: WARNING: Please check https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
+
+I/TC: Primary CPU initializing
+D/TC:0 0   boot_init_primary_late:1011 Executing at offset 0xa7000000 with virtual load address 0xb5100000
+
+I/TC: Initializing virtualization support
+I/TC: Primary CPU switching to normal world boot
+```
+
+
+
+### XEN start
 ```
 Booting /xen.efi
 Xen 4.18.0 (c/s Thu Nov 16 21:44:21 2023 +0000 git:d75f1e9) EFI loader
@@ -205,7 +224,8 @@ Using bootargs from Xen configuration file.
 (XEN)     Instruction Sets: AArch32 A32 Thumb Thumb-2 Jazelle
 (XEN)     Extensions: GenericTimer Security
 ```
-#### Linux Guest start
+
+#### Normal World Guest VM start
 ```
 (XEN) *** Serial input to DOM0 (type 'CTRL-a' three times to switch input)
 (XEN) Freed 352kB init memory.
@@ -220,56 +240,25 @@ buildroot login: root
 # xtest -h
 # xtest -t bench-mark
 
-```
-
-## Output
-
-```
-mkdir ~/Projects/xenonarm/optee
-
-curl https://storage.googleapis.com/git-repo-downloads/repo > repo
-
-
-repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml && repo sync -j1
-
-cd /optee/build
-
-make -j2 toolchains
-
-
-source /home/Projects/xenonarm/optee/build/../toolchains/rust/.cargo/env
-
-Verify cargo is in the path
-cargo -h
-
-make -j4 check
-
-    LD      vmlinux
-    NM      System.map
-    SORTTAB vmlinux
-    OBJCOPY arch/arm64/boot/Image
-    make[1]: Leaving directory '~/Projects/xenonarm/optee/linux'
-
-make -j4
-    nonarm/optee/build/../out/bin/rootfs.cpio.uboot
-    Image Name:   Root file system
-    Created:      Thu Oct 10 21:56:25 2024
-    Image Type:   AArch64 Linux RAMDisk Image (gzip compressed)
-    Data Size:    14744587 Bytes = 14399.01 KiB = 14.06 MiB
-    Load Address: 45000000
-    Entry Point:  45000000
-    ~/Projects/xenonarm/optee
-
-make run
-    cd /home/xenonarm/optee/build/../out/bin && /home/xenonarm/optee/build/../qemu/build/aarch64-softmmu/qemu-system-aarch64 \
-	-nographic -smp 2 -cpu max,sme=on,pauth-impdef=on -d unimp -semihosting-config enable=on,target=native -m 1057 -bios bl1.bin -initrd rootfs.cpio.gz -kernel Image -append 'console=ttyAMA0,38400 keep_bootcon root=/dev/vda2 '  -object rng-random,filename=/dev/urandom,id=rng0 -device virtio-rng-pci,rng=rng0,max-bytes=1024,period=1000 -netdev user,id=vmnic -device virtio-net-device,netdev=vmnic -machine virt,acpi=off,secure=on,mte=off,gic-version=3,virtualization=false   -s -S -serial tcp:127.0.0.1:54320 -serial tcp:127.0.0.1:54321 
-QEMU 8.1.2 monitor - type 'help' for more information
-```
-
-```
-cd /home/xenonarm/optee/build/../out/bin && /home/xenonarm/optee/build/../qemu/build/aarch64-softmmu/qemu-system-aarch64 \
-	-nographic -smp 2 -cpu max,sme=on,pauth-impdef=on -d unimp -semihosting-config enable=on,target=native -m 1057 \
-    -bios bl1.bin \
-    -initrd rootfs.cpio.gz -kernel Image \
-    -append 'console=ttyAMA0,38400 keep_bootcon root=/dev/vda2 '  -object rng-random,filename=/dev/urandom,id=rng0 -device virtio-rng-pci,rng=rng0,max-bytes=1024,period=1000 -netdev user,id=vmnic -device virtio-net-device,netdev=vmnic -machine virt,acpi=off,secure=on,mte=off,gic-version=3,virtualization=false   -s -S -serial tcp:127.0.0.1:54320 -serial tcp:127.0.0.1:54321 
+TEE test application started over default TEE instance
+######################################################
+#
+# benchmark
+#
+######################################################
+ 
+* benchmark_1001 TEE Trusted Storage Performance Test (WRITE)
+-----------------+---------------+----------------
+ Data Size (B) 	 | Time (s)	 | Speed (kB/s)	 
+-----------------+---------------+----------------
+      256 	 |    0.034 	 |    7.353
+      512 	 |    0.039 	 |   12.821
+     1024 	 |    0.029 	 |   34.483
+     2048 	 |    0.069 	 |   28.986
+     4096 	 |    0.135 	 |   29.630
+    16384 	 |    0.656 	 |   24.390
+   524288 	 |   31.892 	 |   16.054
+  1048576 	 |   58.995 	 |   17.357
+-----------------+---------------+----------------
+  benchmark_1001 OK
 ```
