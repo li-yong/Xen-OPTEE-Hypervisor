@@ -1,3 +1,37 @@
+===
+What is a Trusted Execution Environment (TEE)?
+A Trusted Execution Environment (TEE) is an environment for executing code, in which those executing the code can have high levels of trust in the asset management of that surrounding environment because it can ignore threats from the “unknown” rest of the devicei. Hence TEE stands for Trusted Execution Environment and to distinguish them from the uncertain nature of applications in the REE (REE? Wait a second…), applications in the TEE are known as Trusted Applications (TAs). Generally, the rest of the device hosts a feature Rich OS like Android™, and so is generically known in this context as the REE (Rich Operating System Execution Environment).
+
+Trust in a Trusted Execution Environment (TEE)
+There are many interpretations of what is meant by Trust. In the TEE it is used to imply that you may have a higher level of trust in validity, isolation and access control in items (assets) stored in this space, when compared to more general purpose software environments. This then ripples down to an assertion that the Trusted OS and Trusted Applications executing inside that space are more trustworthy.
+
+
+TEEs only accept code for execution that has been:
+
+Appropriately authorized
+And where that authorization has been checked by other authorized code
+And that includes everything from after ROMii boot
+(you can consider the ROM code authorized by its presence).
+TA’s can only directly access their own data (including key) assets:
+
+There is no method for a TA to directly access assets of other TAs or other components of the TEE.
+
+====
+
+Runtime Isolation
+Signature checking during installation, booting, and loading of material is great but
+… what happened 1 second later?
+
+
+To maintain the Trust we must stop interference with the executing code and its assets at run-time. To do this the hardware TEE is isolated from the rest of the device, and TEE provides isolation between the Trusted Applications and other assets inside the TEE.
+
+A given Trusted Application (TA) in the TEE only has to trust the Trusted OS and doesn’t have to care what other TAs are present in the TEE.
+And it also means a TA’s assets are isolated from all other environments in the device.
+The user of the TEE based software knows they can have confidence that their assets cannot be exposed, modified or deleted without authorization (within the isolation profile of the particular TEEiii).
+
+
+
+===
 A "Type 3 hypervisor" is a term sometimes used to describe a hypothetical hypervisor layer that sits between the physical hardware (where "Type 1" hypervisors reside) and the host operating system (where "Type 2" hypervisors run), essentially acting as an intermediary layer between the two primary types; ho
 
 A "Type 3" hypervisor, means it lives in a layer between the physical hardware (where "Type 1" hypervisors like ESX Server, Hyper-V and Xen live) and the operating system (which houses "Type 2" hypervisors like VMware Server, Microsoft Virtual Server and PC virtualization products like VMware Fusion, Parallels for M
@@ -214,6 +248,12 @@ $ optee_example_hello_world
 hello! ... Invoking TA to increment 42
 TA incremented value to 44
 The value is incremented by 2 -- our modification to TA works!
+
+
+=== Demo 2
+optee_example_secure_storage
+
+
 
 
 
