@@ -387,6 +387,12 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
+INPUT ./report.out
+INPUT ./report.out
+INPUT report.out
+INPUT report.out
+INPUT ./report.out
+INPUT ./report.out
 OUTPUT report.out
 INPUT /usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -493,12 +499,6 @@ INPUT ./images/hypervisor_type12.png
 INPUT ./images/hypervisor_type12.png
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/libertine/LinBiolinumT-tlf-t1.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
-INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
-INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
-INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
-INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
-INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/libertine/LinBiolinumT-tlf-t1.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/libertine/LinBiolinumT-tlf-t1--base.tfm
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
@@ -530,8 +530,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/txsys.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/txex-bar.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/libertine/LinBiolinumT-tlf-t1.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/libertine/LinBiolinumT-tlf-t1--base.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/libertine/LinLibertineTB-tlf-t1.vf
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1--base.tfm
 INPUT ./images/env_1_bare_metal.png
 INPUT ./images/env_1_bare_metal.png
 INPUT ./images/env_1_bare_metal.png
@@ -548,6 +546,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/libertine/LinBiolinumT-
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/libertine/LinBiolinumT-tlf-t1--base.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/libertine/LinBiolinumT-tlf-ts1.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/libertine/LinBiolinumT-tlf-ts1--base.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/libertine/LinLibertineTB-tlf-t1.vf
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1--base.tfm
 INPUT ./images/optee_virtual_arch.png
 INPUT ./images/optee_virtual_arch.png
 INPUT ./images/optee_virtual_arch.png
@@ -576,6 +576,12 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc
 INPUT ./report.bbl
 INPUT ./report.bbl
 INPUT report.bbl
+INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
+INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
+INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
 INPUT report.aux
 INPUT ./report.out
 INPUT ./report.out

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.18)  2 DEC 2024 07:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.18)  2 DEC 2024 09:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -804,7 +804,20 @@ Package: balance 1999/02/23 4.3 (PWD)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count349
 \l__pdf_internal_box=\box75
-) (./report.aux)
+) (./report.aux
+
+LaTeX Warning: Label `fig:image_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:image_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:image_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:image_label' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 50.
@@ -928,6 +941,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package hyperref Info: Link coloring OFF on input line 50.
+ (./report.out) (./report.out)
 \@outlinefile=\write5
 \openout5 = `report.out'.
 
@@ -1099,10 +1113,6 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 72.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 72.
-
-
-LaTeX Warning: Reference `TotPages' on page 1 undefined on input line 72.
-
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 72.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
@@ -1155,7 +1165,7 @@ LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
 (Font)              scaled to size 9.0pt on input line 105.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 9.0pt on input line 105.
-<images/hypervisor_type12.png, id=14, 793.46437pt x 361.35pt>
+<images/hypervisor_type12.png, id=183, 793.46437pt x 361.35pt>
 File: images/hypervisor_type12.png Graphic file (type png)
 <use images/hypervisor_type12.png>
 Package pdftex.def Info: images/hypervisor_type12.png  used on input line 120.
@@ -1173,15 +1183,14 @@ Overfull \hbox (38.81612pt too wide) in paragraph at lines 128--136
  []
 
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
-File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
-File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [1.1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_afusau.enc}
+
+
+[1.1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_afusau.enc}
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc} <./images/hypervisor_type12.png>]
-<images/env_1_bare_metal.png, id=39, 618.31pt x 459.7175pt>
+<images/env_1_bare_metal.png, id=201, 618.31pt x 459.7175pt>
 File: images/env_1_bare_metal.png Graphic file (type png)
 <use images/env_1_bare_metal.png>
 Package pdftex.def Info: images/env_1_bare_metal.png  used on input line 159.
@@ -1192,7 +1201,7 @@ Class acmart Warning: A possible image without description on input line 162.
 
 
 
-<images/env_2_add_hyperv.png, id=40, 617.30624pt x 432.61626pt>
+<images/env_2_add_hyperv.png, id=202, 617.30624pt x 432.61626pt>
 File: images/env_2_add_hyperv.png Graphic file (type png)
 <use images/env_2_add_hyperv.png>
 Package pdftex.def Info: images/env_2_add_hyperv.png  used on input line 187.
@@ -1203,11 +1212,11 @@ Class acmart Warning: A possible image without description on input line 190.
 
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 195.
+(Font)              scaled to size 7.0pt on input line 200.
 LaTeX Font Info:    Font shape `TS1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 195.
-[2.2 <./images/env_1_bare_metal.png> <./images/env_2_add_hyperv.png>]
-<images/optee_virtual_arch.png, id=52, 904.37875pt x 646.415pt>
+(Font)              scaled to size 7.0pt on input line 200.
+[2.2 <./images/env_1_bare_metal.png>]
+<images/optee_virtual_arch.png, id=210, 904.37875pt x 646.415pt>
 File: images/optee_virtual_arch.png Graphic file (type png)
 <use images/optee_virtual_arch.png>
 Package pdftex.def Info: images/optee_virtual_arch.png  used on input line 206.
@@ -1220,7 +1229,7 @@ Class acmart Warning: A possible image without description on input line 209.
 
 
 
-[3.3 <./images/optee_virtual_arch.png>]
+[3.3 <./images/env_2_add_hyperv.png> <./images/optee_virtual_arch.png>]
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 305.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
@@ -1231,7 +1240,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<images/optee_xen_support.png, id=69, 494.84875pt x 76.285pt>
+<images/optee_xen_support.png, id=219, 494.84875pt x 76.285pt>
 File: images/optee_xen_support.png Graphic file (type png)
 <use images/optee_xen_support.png>
 Package pdftex.def Info: images/optee_xen_support.png  used on input line 328.
@@ -1247,66 +1256,62 @@ File: lstlang2.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
+
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 334.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 8.0pt on input line 334.
 
 
+[4.4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc} <./images/optee_xen_support.png>] (./report.bbl
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package natbib Warning: Empty `thebibliography' environment on input line 40.
 
-
-
-[4.4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc} <./images/optee_xen_support.png>] (./report.bbl)
+)
 
 Class acmart Warning: Some images may lack descriptions.
 
 
+Class acmart Warning: ACM keywords are mandatory for papers over two pages.
+
+
+Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
 
 
 
-Overfull \vbox (1.874pt too high) has occurred while \output is active []
 
- [5.5]
 
-LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (1 not 5).
-               Rerun to correct this.
+Overfull \vbox (1.499pt too high) has occurred while \output is active []
 
-(./report.aux)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
+File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+) [5.5] (./report.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
  ***********
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  908DD9AABD805CA14E369D8BF2AD9E97;8340.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: 628CFF33A852C7FE9F802AA24DFF1EEF;8435.
  ) 
 Here is how much of TeX's memory you used:
- 32692 strings out of 473579
- 581758 string characters out of 5728233
- 1221396 words of memory out of 5000000
- 54460 multiletter control sequences out of 15000+600000
- 701615 words of font info for 323 fonts, out of 8000000 for 9000
+ 32754 strings out of 473579
+ 582672 string characters out of 5728233
+ 1202178 words of memory out of 5000000
+ 54515 multiletter control sequences out of 15000+600000
+ 701730 words of font info for 324 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,12n,131p,1049b,1702s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,131p,1049b,1249s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on report.pdf (5 pages, 769875 bytes).
+Output written on report.pdf (5 pages, 772748 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 71 named destinations out of 1000 (max. 500000)
- 85046 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 301 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 85382 words of extra memory for PDF output out of 89155 (max. 10000000)
 
