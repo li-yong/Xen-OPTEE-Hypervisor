@@ -1,0 +1,314 @@
+
+% BibTeX entries for references
+
+
+@inproceedings {203678,
+author = {Zhichao Hua and Jinyu Gu and Yubin Xia and Haibo Chen and Binyu Zang and Haibing Guan},
+title = {{vTZ}: Virtualizing {ARM} {TrustZone}},
+booktitle = {26th USENIX Security Symposium (USENIX Security 17)},
+year = {2017},
+isbn = {978-1-931971-40-9},
+address = {Vancouver, BC},
+pages = {541--556},
+url = {https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/hua},
+publisher = {USENIX Association},
+month = aug
+}
+
+
+
+@INPROCEEDINGS{7005255,
+  author={Pinto, S. and Oliveira, D. and Pereira, J. and Cardoso, N. and Ekpanyapong, M. and Cabral, J. and Tavares, A.},
+  booktitle={Proceedings of the 2014 IEEE Emerging Technology and Factory Automation (ETFA)}, 
+  title={Towards a lightweight embedded virtualization architecture exploiting ARM TrustZone}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={1-4},
+  keywords={Virtualization;Computer architecture;Switches;Monitoring;Hardware;Linux;Real-time systems;Virtualization;TrustZone;Monitor;Real-Time Embedded Systems;ARM},
+  doi={10.1109/ETFA.2014.7005255}}
+
+
+@InProceedings{10.1007/978-3-642-32298-3_1,
+author="Winter, Johannes
+and Wiegele, Paul
+and Pirker, Martin
+and T{\"o}gl, Ronald",
+editor="Chen, Liqun
+and Yung, Moti
+and Zhu, Liehuang",
+title="A Flexible Software Development and Emulation Framework for ARM TrustZone",
+booktitle="Trusted Systems",
+year="2012",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="1--15",
+abstract="ARM TrustZone is a hardware isolation mechanism to improve software security. Despite its widespread availability in mobile and embedded devices, development of software for it has been hampered by a lack of openly available emulation and development frameworks. In this paper we provide a comprehensive open-source software environment for experiments with ARM TrustZone, based on the foundations of the well known open-source QEMU platform emulator. Our software framework is complemented by a prototype kernel running within a trusted environment. We validate our software environment with an application example featuring a software based Trusted Platform Module hosted in a TrustZone protected runtime environment and an Android operating system accessing it through an high-level, industry-standard Trusted Computing API.",
+isbn="978-3-642-32298-3"
+}
+
+
+@INPROCEEDINGS{8352425,
+  author={Cicero, Giorgiomaria and Biondi, Alessandro and Buttazzo, Giorgio and Patel, Anup},
+  booktitle={2018 IEEE International Conference on Industrial Technology (ICIT)}, 
+  title={Reconciling security with virtualization: A dual-hypervisor design for ARM TrustZone}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={1628-1633},
+  keywords={Virtual machine monitors;Virtualization;Software;Monitoring;Switches;Security;Tools},
+  doi={10.1109/ICIT.2018.8352425}}
+
+@inproceedings{10.5555/1247360.1247401,
+author = {Bellard, Fabrice},
+title = {QEMU, a fast and portable dynamic translator},
+year = {2005},
+publisher = {USENIX Association},
+address = {USA},
+abstract = {We present the internals of QEMU, a fast machine emulator using an original portable dynamic translator. It emulates several CPUs (x86, PowerPC, ARM and Sparc) on several hosts (x86, PowerPC, ARM, Sparc, Alpha and MIPS). QEMU supports full system emulation in which a complete and unmodified operating system is run in a virtual machine and Linux user mode emulation where a Linux process compiled for one target CPU can be run on another CPU.},
+booktitle = {Proceedings of the Annual Conference on USENIX Annual Technical Conference},
+pages = {41},
+numpages = {1},
+location = {Anaheim, CA},
+series = {ATEC '05}
+}
+
+
+
+
+@InProceedings{10.1007/978-3-030-22496-7_9,
+author="Amacher, Julien
+and Schiavoni, Valerio",
+editor="Pereira, Jos{\'e}
+and Ricci, Laura",
+title="On the Performance of ARM TrustZone",
+booktitle="Distributed Applications and Interoperable Systems",
+year="2019",
+publisher="Springer International Publishing",
+address="Cham",
+pages="133--151",
+abstract="The TrustZone technology, available in the vast majority of recent Arm processors, allows the execution of code inside a so-called secure world. It effectively provides hardware-isolated areas of the processor for sensitive data and code, i.e., a trusted execution environment (TEE). The Op-Tee framework provides a collection of toolchain, open-source libraries and secure kernel specifically geared to develop applications for TrustZone. This paper presents an in-depth performance- and energy-wise study of TrustZone using the Op-Tee framework, including secure storage and the cost of switching between secure and unsecure worlds, using emulated and hardware measurements.",
+isbn="978-3-030-22496-7"
+}
+
+
+@article{beleg2009efficient,
+  title={Efficient Virtualization on ARM Platforms},
+  author={Beleg, Gro{\ss}er},
+  year={2009}
+}
+
+@article{dissertation,
+  title={Emulating Trust zone feature in Android emulator by extending QEMU (Dissertation)},
+  author={Muthu, A.},
+  year={2013}
+}
+
+@inproceedings{10.1145/3426020.3426113,
+author = {Yang, Heedong and Lee, Manhee},
+title = {Demystifying ARM TrustZone TEE Client API using OP-TEE},
+year = {2021},
+isbn = {9781450389259},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3426020.3426113},
+doi = {10.1145/3426020.3426113},
+abstract = {Recently, sensitive information such as financial data and electronic payment systems have been stored in mobile devices. To protect important data, TEE technology has emerged, a trusty and safe execution environment. In particular, ARM TrustZone technology, which is mainly used in mobile, divides one physical processor into Normal World and Secure World to provide a safer execution environment. Many manufacturers have started using TrustZone technology, but existing commercial TEEs have limitations in conducting security research using TrustZone. Therefore, this paper shows how to use OP-TEE which is an open source project for implementing ARM TrustZone technology and TEE Client API that communicates with Trusted Application of TrustZone Secure World. To demystify TEE Client API, we implemented a simple trusted application for communication between Normal World and Secure World in OP-TEE OS using QEMU emulator.},
+booktitle = {The 9th International Conference on Smart Media and Applications},
+pages = {325–328},
+numpages = {4},
+keywords = {ARM Processor, OP-TEE, TrustZone, Trusted Execution Environment},
+location = {Jeju, Republic of Korea},
+series = {SMA 2020}
+}
+
+@INPROCEEDINGS{10274941,
+  author={Mantu, Radu and Stancu, Florin and Chiroiu, Mihai and Țăpuș, Nicolae},
+  booktitle={2023 22nd RoEduNet Conference: Networking in Education and Research (RoEduNet)}, 
+  title={Approaches to teaching embedded development}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-5},
+  keywords={Embedded systems;Conferences;Architecture;Education;Computer architecture;Systems engineering and theory;Hardware;ARM development;Education;Open-Source},
+  doi={10.1109/RoEduNet60162.2023.10274941}}
+
+
+@inproceedings {247658,
+author = {Lee Harrison and Hayawardh Vijayakumar and Rohan Padhye and Koushik Sen and Michael Grace},
+title = {{PARTEMU}: Enabling Dynamic Analysis of {Real-World} {TrustZone} Software Using Emulation},
+booktitle = {29th USENIX Security Symposium (USENIX Security 20)},
+year = {2020},
+isbn = {978-1-939133-17-5},
+pages = {789--806},
+url = {https://www.usenix.org/conference/usenixsecurity20/presentation/harrison},
+publisher = {USENIX Association},
+month = aug
+}
+
+
+@inproceedings{10.1145/3313808.3313810,
+author = {Li, Wenhao and Xia, Yubin and Lu, Long and Chen, Haibo and Zang, Binyu},
+title = {TEEv: virtualizing trusted execution environments on mobile platforms},
+year = {2019},
+isbn = {9781450360203},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3313808.3313810},
+doi = {10.1145/3313808.3313810},
+abstract = {Trusted Execution Environments (TEE) are widely deployed, especially on smartphones. A recent trend in TEE development is the transition from vendor-controlled, single-purpose TEEs to open TEEs that host Trusted Applications (TAs) from multiple sources with independent tasks. This transition is expected to create a TA ecosystem needed for providing stronger and customized security to apps and OS running in the Rich Execution Environment (REE). However, the transition also poses two security challenges: enlarged attack surface resulted from the increased complexity of TAs and TEEs; the lack of trust (or isolation) among TAs and the TEE.  In this paper, we first present a comprehensive analysis on the recent CVEs related to TEE and the need of multiple TEE scheme. We then propose TEEv, a TEE virtualization architecture that supports multiple isolated, restricted TEE instances (i.e., vTEEs) running concurrently. Relying on a tiny hypervisor (we call it TEE-visor), TEEv allows TEE instances from different vendors to run in isolation on the same smartphone and to host their own TAs. Therefore, a compromised vTEE cannot affect its peers or REE; TAs no longer have to run in untrusted/unsuitable TEEs. We have implemented TEEv on a development board and a real smartphone, which runs multiple commercial TEE instances from different vendors with very small porting effort. Our evaluation results show that TEEv can isolate vTEEs and defend all known attacks on TEE with only mild performance overhead.},
+booktitle = {Proceedings of the 15th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments},
+pages = {2–16},
+numpages = {15},
+keywords = {Virtualization, TrustZone, TEE, Mobile security},
+location = {Providence, RI, USA},
+series = {VEE 2019}
+}
+
+
+@article{li_2024_teem,
+  author = {Li, Jun and Luo, Xinman and Lei, Hong and Cheng, Jieren},
+  pages = {108584-108596},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+  title = {TEEm: Supporting Large Memory for Trusted Applications in ARM TrustZone},
+  doi = {10.1109/access.2024.3431231},
+  urldate = {2024-10-22},
+  volume = {12},
+  year = {2024},
+  journal = {IEEE Access}
+}
+
+@article{abuabed2023stride,
+  title={STRIDE threat model-based framework for assessing the vulnerabilities of modern vehicles},
+  author={Abuabed, Zaina and Alsadeh, Ahmad and Taweel, Adel},
+  journal={Computers \& Security},
+  volume={133},
+  pages={103391},
+  year={2023},
+  publisher={Elsevier}
+}
+
+@inproceedings{li2023research,
+  title={Research on the security of automotive domain controller systems based on trusted execution environment},
+  author={Li, Zhongyue and Zhang, Yanan and Jia, Xianfeng and Pan, Chenglong and Liu, Pingyi and Lu, Xu},
+  booktitle={Proceedings of the 2023 3rd Guangdong-Hong Kong-Macao Greater Bay Area Artificial Intelligence and Big Data Forum},
+  pages={229--235},
+  year={2023}
+}
+
+@inproceedings{intelTXT,
+  title = {Intel® Trusted Execution Technology},
+  author = {Donald E. Knuth and Robert L. Sites},
+  booktitle = {Proceedings of the Intel Technology Conference},
+  year = {2012},
+  doi = {10.1145/xxx.yyy}
+}
+
+@inproceedings{TEEreview,
+  author = {Ghada Arfaoui and Sa\"{i}d Gharout and Jacques Traor\'{e}},
+  title = {Trusted Execution Environments: A Look under the Hood},
+  booktitle = {2014 2nd IEEE International Conference on Mobile Cloud Computing, Services, and Engineering},
+  year = {2014},
+  pages = {259--264},
+  doi = {10.1109/MobileCloud.2014.47}
+}
+
+@article{systematicReview,
+  author = {Dalton Cézane Gomes Valadares and Newton Carlos Will and Jean Caminha and Mirko Barbosa Perkusich and Angelo Perkusich and Kyller Costa Gorgônio},
+  title = {Systematic Literature Review on the Use of Trusted Execution Environments to Protect Cloud/Fog-Based Internet of Things Applications},
+  journal = {IEEE Access},
+  volume = {9},
+  year = {2021},
+  pages = {80953--80973},
+  doi = {10.1109/ACCESS.2021.3085524}
+}
+
+@article{SGXuse,
+  author = {Dalton Valadares and Mirko Barbosa Perkusich and others},
+  title = {Secure and Trusted Execution: Past, Present, and Future},
+  journal = {IEEE Transactions on Cloud Computing},
+  volume = {9},
+  number = {1},
+  pages = {103--117},
+  year = {2021},
+  doi = {10.1109/TCC.2021.3057725}
+}
+
+
+@inproceedings{10.1145/3634737.3645002,
+author = {Li, Zhiang and Mashima, Daisuke and Ong, Wen Shei and Esiner, Ertem and Kalbarczyk, Zbigniew and Chang, Ee-Chien},
+title = {On Practicality of Using ARM TrustZone Trusted Execution Environment for Securing Programmable Logic Controllers},
+year = {2024},
+isbn = {9798400704826},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi-org.silk.library.umass.edu/10.1145/3634737.3645002},
+doi = {10.1145/3634737.3645002},
+abstract = {Programmable logic controllers (PLCs) are crucial devices for implementing automated control in various industrial control systems (ICS), such as smart power grids, water treatment systems, manufacturing, and transportation systems. Owing to their importance, PLCs are often the target of cyber attackers that are aiming at disrupting the operation of ICS, including the nation's critical infrastructure, by compromising the integrity of control logic execution. While a wide range of cybersecurity solutions for ICS have been proposed, they cannot counter strong adversaries with a foothold on the PLC devices, which could manipulate memory, I/O interface, or PLC logic itself. These days, many ICS devices in the market, including PLCs, run on ARM-based processors, and there is a promising security technology called ARM TrustZone, to offer a Trusted Execution Environment (TEE) on embedded devices. Envisioning that such a hardware-assisted security feature becomes available for ICS devices in the near future, this paper investigates the application of the ARM TrustZone TEE technology for enhancing the security of PLC. Our aim is to evaluate the feasibility and practicality of the TEE-based PLCs through the proof-of-concept design and implementation using open-source software such as OP-TEE and OpenPLC. Our evaluation assesses the performance and resource consumption in real-world ICS configurations, and based on the results, we discuss bottlenecks in the OP-TEE secure OS towards a large-scale ICS and desired changes for its application on ICS devices. Our implementation is made available to public for further study and research.},
+booktitle = {Proceedings of the 19th ACM Asia Conference on Computer and Communications Security},
+pages = {947–961},
+numpages = {15},
+keywords = {trusted execution environment (TEE), ARM trustzone, industrial control system (ICS), programmable logic controller (PLC)},
+location = {Singapore, Singapore},
+series = {ASIA CCS '24}
+}
+
+
+
+@inproceedings{10.1145/3577923.3583648,
+author = {Islam, Md Shihabul and Zamani, Mahmoud and Kim, Chung Hwan and Khan, Latifur and Hamlen, Kevin W.},
+title = {Confidential Execution of Deep Learning Inference at the Untrusted Edge with ARM TrustZone},
+year = {2023},
+isbn = {9798400700675},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi-org.silk.library.umass.edu/10.1145/3577923.3583648},
+doi = {10.1145/3577923.3583648},
+abstract = {This paper proposes a new confidential deep learning (DL) inference system with ARM TrustZone to provide confidentiality and integrity of DL models and data in an untrusted edge device with limited memory. Although ARM TrustZone supplies a strong, hardware-supported trusted execution environment for protecting sensitive code and data in an edge device against adversaries, resource limitations in typical edge devices have raised significant challenges for protecting on-device DL requiring large memory consumption without sacrificing the security and accuracy of the model. The proposed solution addresses this challenge without modifying the protected DL model, thereby preserving the original prediction accuracy. Comprehensive experiments using different DL architectures and datasets demonstrate that inference services for large and complex DL models can be deployed in edge devices with TrustZone with limited trusted memory, ensuring data confidentiality and preserving the original model's prediction exactness.},
+booktitle = {Proceedings of the Thirteenth ACM Conference on Data and Application Security and Privacy},
+pages = {153–164},
+numpages = {12},
+keywords = {deep learning, embedded device, trusted execution environment},
+location = {Charlotte, NC, USA},
+series = {CODASPY '23}
+}
+
+@inproceedings{10.1145/3545948.3545961,
+author = {Schwarz, Fabian},
+title = {TrustedGateway: TEE-Assisted Routing and Firewall Enforcement Using ARM TrustZone},
+year = {2022},
+isbn = {9781450397049},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi-org.silk.library.umass.edu/10.1145/3545948.3545961},
+doi = {10.1145/3545948.3545961},
+abstract = {Gateway routers are at the heart of every network infrastructure, interconnecting subnetworks and enforcing access control policies using firewalls. However, their central position makes them high-value targets for network compromises. Typically, gateways are erroneously assumed to be hardened against software vulnerabilities (“bastion host”). In fact, though, they inherit the attack surface of their underlying commodity OSes which together with the wealth of auxiliary services available on both consumer and enterprise gateways—web and VoIP, file sharing, remote logins, monitoring, etc.—undermines this belief. This is underlined by a plethora of recent CVEs for commodity OSes and services of popular routers which resulted in authentication bypass or remote code execution thus enabling attackers full control over their security policies. We present TrustedGateway (TruGW), a new gateway architecture, which isolates “core” networking features—routing and firewall—from error-prone auxiliary services and gateway OSes. TruGW leverages a TEE-assisted design to protect the network path and policies while staying compatible with commodity gateway platforms. TruGW uses ARM TrustZone to protect the NIC and traffic processing from a fully-compromised gateway and permits policy updates only by trusted remote administrators. That way, TruGW can readily guarantee the secure enforcement of trusted policies on commodity gateways. TruGW’s small attack surface is a key enabler to regain trust in core network infrastructures.},
+booktitle = {Proceedings of the 25th International Symposium on Research in Attacks, Intrusions and Defenses},
+pages = {56–71},
+numpages = {16},
+keywords = {Firewall, Gateway, Isolation, NIC, Router, TEE, TrustZone, Virtio},
+location = {Limassol, Cyprus},
+series = {RAID '22}
+}
+
+@inproceedings {238260,
+author = {Fatima M. Anwar and Mani Srivastava},
+title = {Applications and Challenges in Securing Time},
+booktitle = {12th USENIX Workshop on Cyber Security Experimentation and Test (CSET 19)},
+year = {2019},
+address = {Santa Clara, CA},
+url = {https://www.usenix.org/conference/cset19/presentation/anwar},
+publisher = {USENIX Association},
+month = aug
+}
+
+@INPROCEEDINGS{9052115,
+  author={Anwar, Fatima M. and Garcia, Luis and Han, Xi and Srivastava, Mani},
+  booktitle={2019 IEEE Real-Time Systems Symposium (RTSS)}, 
+  title={Securing Time in Untrusted Operating Systems with TimeSeal}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={80-92},
+  keywords={trusted clock;shielded execution;delay attack;scheduling attack;Intel SGX},
+  doi={10.1109/RTSS46320.2019.00018}}
