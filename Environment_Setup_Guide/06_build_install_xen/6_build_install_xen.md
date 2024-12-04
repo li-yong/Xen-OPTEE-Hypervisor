@@ -43,7 +43,7 @@ printf "0x%x\n" $(stat -c %s rootfs.img.gz)
 ```
 
 # Next step
-Now if run the Qeme with Xen, and start the Linux as dom0, XEN will stuck on loading Linux. caused by the Advanced Microcontroller Bus Architecture (AMBA) compliant controller.  We will handle that in the next sector.
+Now if run the Qume with Xen, and start the Linux as dom0, XEN will stuck on loading Linux. caused by the Advanced Microcontroller Bus Architecture (AMBA) compliant controller.  We will handle that in the next sector.
 
 
 Stuck output

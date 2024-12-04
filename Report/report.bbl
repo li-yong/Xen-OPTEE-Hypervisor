@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{0}
+\begin{thebibliography}{14}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -36,5 +36,145 @@
 \providecommand\bibinfo[2]{#2}
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Amacher and Schiavoni(2019)]%
+        {10.1007/978-3-030-22496-7_9}
+\bibfield{author}{\bibinfo{person}{Julien Amacher} {and} \bibinfo{person}{Valerio Schiavoni}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{On the Performance of ARM TrustZone}. In \bibinfo{booktitle}{\emph{Distributed Applications and Interoperable Systems}}, \bibfield{editor}{\bibinfo{person}{Jos{\'e} Pereira} {and} \bibinfo{person}{Laura Ricci}} (Eds.). \bibinfo{publisher}{Springer International Publishing}, \bibinfo{address}{Cham}, \bibinfo{pages}{133--151}.
+\newblock
+\showISBNx{978-3-030-22496-7}
+
+
+\bibitem[Bellard(2005a)]%
+        {qemu_fast_portable}
+\bibfield{author}{\bibinfo{person}{Fabrice Bellard}.} \bibinfo{year}{2005}\natexlab{a}.
+\newblock \showarticletitle{QEMU, a Fast and Portable Dynamic Translator}. In \bibinfo{booktitle}{\emph{Proceedings of the Annual Conference on USENIX Annual Technical Conference}}. \bibinfo{publisher}{USENIX Association}.
+\newblock
+\urldef\tempurl%
+\url{https://www.usenix.org/legacy/event/usenix05/tech/general/bellard.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Bellard(2005b)]%
+        {10.5555/1247360.1247401}
+\bibfield{author}{\bibinfo{person}{Fabrice Bellard}.} \bibinfo{year}{2005}\natexlab{b}.
+\newblock \showarticletitle{QEMU, a fast and portable dynamic translator}. In \bibinfo{booktitle}{\emph{Proceedings of the Annual Conference on USENIX Annual Technical Conference}} (Anaheim, CA) \emph{(\bibinfo{series}{ATEC '05})}. \bibinfo{publisher}{USENIX Association}, \bibinfo{address}{USA}, \bibinfo{pages}{41}.
+\newblock
+
+
+\bibitem[Cicero et~al\mbox{.}(2018)]%
+        {8352425}
+\bibfield{author}{\bibinfo{person}{Giorgiomaria Cicero}, \bibinfo{person}{Alessandro Biondi}, \bibinfo{person}{Giorgio Buttazzo}, {and} \bibinfo{person}{Anup Patel}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Reconciling security with virtualization: A dual-hypervisor design for ARM TrustZone}. In \bibinfo{booktitle}{\emph{2018 IEEE International Conference on Industrial Technology (ICIT)}}. \bibinfo{pages}{1628--1633}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICIT.2018.8352425}
+\showDOI{\tempurl}
+
+
+\bibitem[Contributors(2024)]%
+        {optee_docs}
+\bibfield{author}{\bibinfo{person}{OP-TEE~Project Contributors}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{OP-TEE Documentation}}.
+\newblock
+\urldef\tempurl%
+\url{https://optee.readthedocs.io/en/latest/}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Accessed: December 4, 2024}.
+
+
+\bibitem[Harrison et~al\mbox{.}(2020a)]%
+        {247658}
+\bibfield{author}{\bibinfo{person}{Lee Harrison}, \bibinfo{person}{Hayawardh Vijayakumar}, \bibinfo{person}{Rohan Padhye}, \bibinfo{person}{Koushik Sen}, {and} \bibinfo{person}{Michael Grace}.} \bibinfo{year}{2020}\natexlab{a}.
+\newblock \showarticletitle{{PARTEMU}: Enabling Dynamic Analysis of {Real-World} {TrustZone} Software Using Emulation}. In \bibinfo{booktitle}{\emph{29th USENIX Security Symposium (USENIX Security 20)}}. \bibinfo{publisher}{USENIX Association}, \bibinfo{pages}{789--806}.
+\newblock
+\showISBNx{978-1-939133-17-5}
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/usenixsecurity20/presentation/harrison}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Harrison et~al\mbox{.}(2020b)]%
+        {partemu}
+\bibfield{author}{\bibinfo{person}{Lee Harrison}, \bibinfo{person}{Hayawardh Vijayakumar}, \bibinfo{person}{Rohan Padhye}, \bibinfo{person}{Koushik Sen}, {and} \bibinfo{person}{Michael Grace}.} \bibinfo{year}{2020}\natexlab{b}.
+\newblock \showarticletitle{PartEmu: Enabling Dynamic Analysis of Real-World TrustZone Software Using Emulation}. In \bibinfo{booktitle}{\emph{29th USENIX Security Symposium}}. \bibinfo{publisher}{USENIX}, \bibinfo{pages}{789--805}.
+\newblock
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/usenixsecurity20/presentation/harrison}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Li et~al\mbox{.}(2019)]%
+        {10.1145/3313808.3313810}
+\bibfield{author}{\bibinfo{person}{Wenhao Li}, \bibinfo{person}{Yubin Xia}, \bibinfo{person}{Long Lu}, \bibinfo{person}{Haibo Chen}, {and} \bibinfo{person}{Binyu Zang}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{TEEv: virtualizing trusted execution environments on mobile platforms}. In \bibinfo{booktitle}{\emph{Proceedings of the 15th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments}} (Providence, RI, USA) \emph{(\bibinfo{series}{VEE 2019})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{2–16}.
+\newblock
+\showISBNx{9781450360203}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3313808.3313810}
+\showDOI{\tempurl}
+
+
+\bibitem[Liebergeld(2009)]%
+        {efficient_virtualization}
+\bibfield{author}{\bibinfo{person}{Steffen Liebergeld}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Efficient Virtualization on {ARM} Platforms}. In \bibinfo{booktitle}{\emph{Proceedings of Technische Universit{\"a}t Dresden, Institut f{\"u}r Systemarchitektur}}. \bibinfo{publisher}{Technische Universit{\"a}t Dresden}, \bibinfo{address}{Dresden, Germany}.
+\newblock
+
+
+\bibitem[Mantu et~al\mbox{.}(2023)]%
+        {10274941}
+\bibfield{author}{\bibinfo{person}{Radu Mantu}, \bibinfo{person}{Florin Stancu}, \bibinfo{person}{Mihai Chiroiu}, {and} \bibinfo{person}{Nicolae Țăpuș}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Approaches to teaching embedded development}. In \bibinfo{booktitle}{\emph{2023 22nd RoEduNet Conference: Networking in Education and Research (RoEduNet)}}. \bibinfo{pages}{1--5}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/RoEduNet60162.2023.10274941}
+\showDOI{\tempurl}
+
+
+\bibitem[Obrezkov(2019)]%
+        {obrezkov2019xen}
+\bibfield{author}{\bibinfo{person}{Denis Obrezkov}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Xen on ARM and QEMU}}.
+\newblock
+\urldef\tempurl%
+\url{https://medium.com/@denisobrezkov/xen-on-arm-and-qemu-1654f24dea75}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Pinto et~al\mbox{.}(2014)]%
+        {7005255}
+\bibfield{author}{\bibinfo{person}{S. Pinto}, \bibinfo{person}{D. Oliveira}, \bibinfo{person}{J. Pereira}, \bibinfo{person}{N. Cardoso}, \bibinfo{person}{M. Ekpanyapong}, \bibinfo{person}{J. Cabral}, {and} \bibinfo{person}{A. Tavares}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Towards a lightweight embedded virtualization architecture exploiting ARM TrustZone}. In \bibinfo{booktitle}{\emph{Proceedings of the 2014 IEEE Emerging Technology and Factory Automation (ETFA)}}. \bibinfo{pages}{1--4}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ETFA.2014.7005255}
+\showDOI{\tempurl}
+
+
+\bibitem[Winter et~al\mbox{.}(2012)]%
+        {10.1007/978-3-642-32298-3_1}
+\bibfield{author}{\bibinfo{person}{Johannes Winter}, \bibinfo{person}{Paul Wiegele}, \bibinfo{person}{Martin Pirker}, {and} \bibinfo{person}{Ronald T{\"o}gl}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{A Flexible Software Development and Emulation Framework for ARM TrustZone}. In \bibinfo{booktitle}{\emph{Trusted Systems}}, \bibfield{editor}{\bibinfo{person}{Liqun Chen}, \bibinfo{person}{Moti Yung}, {and} \bibinfo{person}{Liehuang Zhu}} (Eds.). \bibinfo{publisher}{Springer Berlin Heidelberg}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{1--15}.
+\newblock
+\showISBNx{978-3-642-32298-3}
+
+
+\bibitem[Yang and Lee(2021)]%
+        {10.1145/3426020.3426113}
+\bibfield{author}{\bibinfo{person}{Heedong Yang} {and} \bibinfo{person}{Manhee Lee}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Demystifying ARM TrustZone TEE Client API using OP-TEE}. In \bibinfo{booktitle}{\emph{The 9th International Conference on Smart Media and Applications}} (Jeju, Republic of Korea) \emph{(\bibinfo{series}{SMA 2020})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{325–328}.
+\newblock
+\showISBNx{9781450389259}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3426020.3426113}
+\showDOI{\tempurl}
+
 
 \end{thebibliography}

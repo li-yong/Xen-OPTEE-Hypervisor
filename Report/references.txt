@@ -1,57 +1,6 @@
-lar framework for emulatin
+
 % BibTeX entries for references
 
-
-
-
-
-@inproceedings{efficient_virtualization,
-  author    = {Steffen Liebergeld},
-  title     = {Efficient Virtualization on {ARM} Platforms},
-  booktitle = {Proceedings of Technische Universit{\"a}t Dresden, Institut f{\"u}r Systemarchitektur},
-  year      = {2009},
-  publisher = {Technische Universit{\"a}t Dresden},
-  address   = {Dresden, Germany}
-}
-
-@inproceedings{partemu,
-  author    = {Lee Harrison and Hayawardh Vijayakumar and Rohan Padhye and Koushik Sen and Michael Grace},
-  title     = {PartEmu: Enabling Dynamic Analysis of Real-World TrustZone Software Using Emulation},
-  booktitle = {29th USENIX Security Symposium},
-  year      = {2020},
-  pages     = {789--805},
-  publisher = {USENIX},
-  url       = {https://www.usenix.org/conference/usenixsecurity20/presentation/harrison}
-}
-
-@inproceedings{qemu_fast_portable,
-  author    = {Fabrice Bellard},
-  title     = {QEMU, a Fast and Portable Dynamic Translator},
-  booktitle = {Proceedings of the Annual Conference on USENIX Annual Technical Conference},
-  year      = {2005},
-  publisher = {USENIX Association},
-  url       = {https://www.usenix.org/legacy/event/usenix05/tech/general/bellard.html}
-}
-
-
-
-@manual{optee_docs,
-  title     = {OP-TEE Documentation},
-  author    = {OP-TEE Project Contributors},
-  year      = {2024},
-  url       = {https://optee.readthedocs.io/en/latest/},
-  note      = {Accessed: December 4, 2024}
-}
-
-
-
-
-@online{obrezkov2019xen,
-  author    = {Denis Obrezkov},
-  title     = {Xen on ARM and QEMU},
-  year      = {2019},
-  url       = {https://medium.com/@denisobrezkov/xen-on-arm-and-qemu-1654f24dea75}
-}
 
 @inproceedings {203678,
 author = {Zhichao Hua and Jinyu Gu and Yubin Xia and Haibo Chen and Binyu Zang and Haibing Guan},
