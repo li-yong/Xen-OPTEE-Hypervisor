@@ -54,6 +54,6 @@ The rise of embedded systems and their integration into critical infrastructure 
 (https://optee.readthedocs.io/en/latest/architecture/virtualization.html#implementation-details)
 - **QEMU System-ARM with Xen**: [Tutorial](https://wiki.xenproject.org/wiki/Xen_ARM_with_Virtualization_Extensions/qemu-system-aarch64)
 - **Additional Resources**:
-  - [Medium Article on Xen and OP-TEE](https://medium.com/@denisobrezkov/xen-on-arm-and-qemu-1654f24de2f5)
+  - [Medium Article on Xen and OP-TEE](https://medium.com/@denisobrezkov/xen-on-arm-and-qemu-1654f24dea75)
   - [Environment Setup Script](https://gist.github.com/stewdk/110f43e0cc1d905fc6ed4c7e10d8d35e)
 
