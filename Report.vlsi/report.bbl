@@ -1,0 +1,91 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{5}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[651(2013)]%
+        {6515989}
+ \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{IEEE Standard for Test Access Port and Boundary-Scan Architecture}.
+\newblock \bibinfo{journal}{\emph{IEEE Std 1149.1-2013 (Revision of IEEE Std 1149.1-2001)}} (\bibinfo{year}{2013}), \bibinfo{pages}{1--444}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/IEEESTD.2013.6515989}
+\showDOI{\tempurl}
+
+
+\bibitem[Cai and Wang(2022)]%
+        {9824550}
+\bibfield{author}{\bibinfo{person}{Zhikuang Cai} {and} \bibinfo{person}{Yunbo Wang}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{A Dynamically Configurable Chiplet Testing Technology Based on TAP Controller Architecture}. In \bibinfo{booktitle}{\emph{2022 IEEE 5th International Conference on Electronics Technology (ICET)}}. \bibinfo{pages}{590--594}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICET55676.2022.9824550}
+\showDOI{\tempurl}
+
+
+\bibitem[Huang et~al\mbox{.}(2024)]%
+        {10766679}
+\bibfield{author}{\bibinfo{person}{Yi-Chun Huang}, \bibinfo{person}{Pei-Yun Lin}, \bibinfo{person}{Jin-Fu Li}, \bibinfo{person}{Hong-Siang Fu}, {and} \bibinfo{person}{Yung-Ping Lee}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Efficient Built-In Self-Test Scheme for Inter-Die Interconnects of Chiplet-Based Chips}. In \bibinfo{booktitle}{\emph{2024 IEEE International Test Conference (ITC)}}. \bibinfo{pages}{149--156}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ITC51657.2024.00034}
+\showDOI{\tempurl}
+
+
+\bibitem[Hutner et~al\mbox{.}(2020)]%
+        {9107636}
+\bibfield{author}{\bibinfo{person}{M. Hutner}, \bibinfo{person}{R. Sethuram}, \bibinfo{person}{B. Vinnakota}, \bibinfo{person}{D. Armstrong}, {and} \bibinfo{person}{A. Copperhall}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Special Session: Test Challenges in a Chiplet Marketplace}. In \bibinfo{booktitle}{\emph{2020 IEEE 38th VLSI Test Symposium (VTS)}}. \bibinfo{pages}{1--12}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/VTS48691.2020.9107636}
+\showDOI{\tempurl}
+
+
+\bibitem[Zhang et~al\mbox{.}(2023)]%
+        {10365967}
+\bibfield{author}{\bibinfo{person}{Zhen Zhang}, \bibinfo{person}{Jinghe Wei}, \bibinfo{person}{Yujia Yin}, \bibinfo{person}{Jian He}, {and} \bibinfo{person}{Ying Gao}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{An Improved Test Structure of Boundary Scan Designed for 2.5D Integration}. In \bibinfo{booktitle}{\emph{2023 8th International Conference on Integrated Circuits and Microsystems (ICICM)}}. \bibinfo{pages}{643--648}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICICM59499.2023.10365967}
+\showDOI{\tempurl}
+
+
+\end{thebibliography}

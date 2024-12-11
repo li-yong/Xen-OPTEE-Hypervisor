@@ -1,0 +1,147 @@
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+% \documentclass[acmtog]{acmart}
+\documentclass[acmtog, 12pt]{acmart}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{tikz}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+
+\setcopyright{acmlicensed}
+\copyrightyear{2024}
+\acmYear{2024}
+
+\citestyle{acmauthoryear}
+\date{\today}
+
+\begin{document}
+
+\title{Advancements and Challenges in Chiplet Testing}
+
+\author{Yong Li}
+\authornote{Both authors contributed equally to this research.}
+\email{yonli@umass.edu}
+
+\orcid{1234-5678-9012}
+\affiliation{%
+  \institution{University of Massachusetts, Amherst}
+  \city{Amherst}
+  \state{MA}
+  \country{USA}
+}
+
+\renewcommand{\shortauthors}{Yong Li}
+
+
+    
+    
+\maketitle
+
+
+\section*{Introduction}
+
+Chiplets are small parts of a big chip. They are like building blocks that can work together to create a larger system. Using chiplets is better than using one big chip because it can improve the manufacturing process. When one small part has a problem, only that part is wasted, not the whole chip. This makes chiplets more cost-effective.
+
+Chiplets also give designers more flexibility. They can mix different types of chiplets, like memory and processors, to build better systems. It is also easier to upgrade. For example, one chiplet can be replaced with a new version while keeping the other chiplets the same.
+
+However, testing chiplets is very difficult. Since they are small and closely packed, it is hard to access the connections between them. Power delivery during testing can also be a problem. High-speed connections, like UCIe, make testing even harder because they need special tools.
+
+This paper will explain the problems in chiplet testing and how researchers are finding ways to solve them. It is based on recent studies about chiplet technologies, focusing on testing methods and challenges.
+
+
+
+
+\section*{Key Challenges in Chiplet Testing}
+
+Chiplet testing has many challenges. One problem is accessibility. It is hard to access the small connections between chiplets, especially in advanced designs like 2.5D and 3D. These connections are tightly packed and hidden, making it hard to test them directly~\cite{10365967}.
+
+Another challenge is power delivery. During testing, power needs to be supplied to the chiplets, but this can cause problems like uneven power distribution or noise. These issues can affect the accuracy of the test results~\cite{9107636}.
+
+Testing interconnects is also complicated. High-speed connections like UCIe need special tools to test their performance. Traditional methods like boundary scan may not work well for these connections~\cite{10766679}.
+
+Finally, there is a lack of standard testing protocols. Different chiplets may come from different vendors, but there are no universal standards to ensure they all work together. This makes testing more difficult and time-consuming~\cite{9107636}.
+
+
+\section*{Advancements in Testing Methodologies}
+
+Recent research provides concrete solutions to tackle challenges in chiplet testing. Boundary scan, Built-In Self-Test (BIST), and dynamic configuration techniques have shown significant progress in addressing issues related to interconnect testing and fault detection.
+
+\subsection*{Boundary Scan Enhancements}
+Boundary scan testing, originally designed for PCB-level testing, has been extended to meet the demands of chiplet systems. For instance, the paper *"An Improved Test Structure of Boundary Scan Designed for 2.5D Integration"* proposes adding additional scan cells to the boundary scan architecture. This approach enhances observability and fault coverage for interposer-based connections in 2.5D designs. The study highlights a practical implementation where the modified boundary scan detects interconnect faults such as opens and shorts with a 20\% improvement in fault coverage compared to traditional methods~\cite{10365967}.
+
+Furthermore, the integration of IEEE 1838 into 3D testing frameworks addresses the limitations of IEEE 1149.1 in stacked die environments. By adding features like die-level isolation and enhanced control over test access points, IEEE 1838 facilitates more efficient testing for vertically stacked systems, ensuring compatibility across multiple layers~\cite{6515989}.
+
+\subsection*{Built-In Self-Test (BIST)}
+BIST is another major advancement tailored for chiplet testing. The paper *"Efficient Built-In Self-Test Scheme for Inter-Die Interconnects of Chiplet-Based Chips"* describes a methodology where test circuits are embedded into the chiplet itself. This approach is particularly effective in 3D stacked systems, where inter-die connections are hard to access. The proposed BIST scheme uses approximation algorithms to reduce test time and power consumption while maintaining high accuracy. Experimental results in the study demonstrate a 30\% reduction in test execution time and a significant increase in test efficiency compared to external testing setups~\cite{10766679}.
+
+\subsection*{Dynamic Testing Configurations}
+Dynamic configuration using TAP controllers offers another innovative solution for heterogeneous chiplet systems. In *"A Dynamically Configurable Chiplet Testing Technology Based on TAP Controller Architecture"*, researchers propose a TAP-based architecture that allows chiplets to adapt their test protocols dynamically. This architecture enables selective testing of specific chiplets in a multi-vendor environment, significantly reducing test setup time. The paper provides an example of testing a system with three different chiplet types, achieving a 25\% reduction in configuration time while maintaining compatibility with existing test standards~\cite{9824550}.
+
+These advancements demonstrate how targeted innovations in boundary scan, BIST, and dynamic testing are transforming chiplet testing methodologies. By addressing specific challenges such as accessibility, interconnect faults, and system heterogeneity, these solutions pave the way for more efficient and reliable testing processes.
+
+
+
+\section*{Relevance to Modern Chiplet Design}
+
+The advancements in chiplet testing directly impact the design and functionality of modern chiplet-based systems. Boundary scan enhancements, for instance, allow manufacturers to identify defects in interposer connections effectively, which is crucial for maintaining reliability in 2.5D architectures~\cite{10365967}. By addressing these defects early, designers can ensure higher yields and better system performance.
+
+Built-In Self-Test (BIST) methodologies simplify testing processes by integrating fault detection mechanisms into the chiplet itself. This is particularly useful in 3D stacked systems, where interconnect faults are harder to detect. BIST not only reduces testing costs but also enhances test coverage, making it an essential tool for high-density chiplet packaging~\cite{10766679}.
+
+Dynamic configuration techniques using TAP controllers provide adaptability for heterogeneous chiplet systems. As chiplets from different vendors may use varying technologies, this approach ensures that each chiplet can be tested effectively without requiring unique tools for each vendor~\cite{9824550}. This flexibility is critical in reducing integration times and improving compatibility across ecosystems.
+
+Standardized protocols like those proposed in IEEE 1149.1 and its extensions enable a universal testing framework. This reduces development time for testing tools and ensures consistency in test results across diverse chiplet designs. Such standardization is key to scaling chiplet technologies for broader industrial adoption~\cite{6515989}.
+
+In summary, these testing advancements not only address the technical challenges of chiplet systems but also pave the way for more efficient, scalable, and reliable designs in the semiconductor industry.
+
+
+\section*{Conclusion and Future Directions}
+
+Chiplet-based designs offer significant benefits in terms of modularity, flexibility, and cost efficiency. However, these advantages come with unique challenges, especially in the area of testing. This paper discussed the main challenges such as accessibility, power delivery issues, and the complexity of high-speed interconnects like UCIe. It also highlighted recent advancements, including improved boundary scan techniques, Built-In Self-Test (BIST), dynamic testing configurations, and the push for standardization~\cite{10365967, 10766679, 9824550, 6515989}.
+
+While these advancements address many of the current challenges, there is still much work to be done. Future research should focus on integrating artificial intelligence and machine learning into testing methodologies to predict and detect faults more efficiently. Additionally, improving thermal-aware testing methods will become critical as chiplet systems continue to evolve toward higher performance and density.
+
+Another key area for future exploration is the development of universal testing frameworks that seamlessly integrate across different vendor ecosystems. As chiplet adoption grows, such frameworks will be essential for ensuring interoperability and reducing testing costs.
+
+In conclusion, testing remains a critical factor in the success of chiplet-based architectures. By continuing to innovate and refine testing methodologies, the semiconductor industry can fully realize the potential of chiplets, enabling the next generation of high-performance systems.
+
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}
+\endinput
