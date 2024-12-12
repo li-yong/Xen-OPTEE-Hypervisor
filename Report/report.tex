@@ -66,9 +66,9 @@
 \renewcommand{\shortauthors}{Yong Li, Linglin Wu, Rui Li}
 
 
-\begin{abstract}
-  Abstract--The increasing adoption of virtualization technologies in embedded systems highlights the importance of secure environments to protect against privileged adversaries. ARM TrustZone, a hardware-based Trusted Execution Environment (TEE), provides a foundation for secure execution of sensitive operations. However, the integration of TrustZone with virtualization platforms remains a challenge. This work leverages QEMU and Xen to establish a robust development environment for emulating ARM TrustZone. QEMU facilitates debugging, testing, and verification of TrustZone features by providing an emulated ARM platform, enabling developers to work independently of physical hardware. Xen, as a hypervisor, extends virtualization capabilities, allowing the execution of multiple isolated operating systems while maintaining support for secure TrustZone operations. Together, QEMU and Xen provide a flexible and secure framework for exploring and enhancing TrustZone's potential in virtualized systems. This study demonstrates the setup, integration, and evaluation of TrustZone-enabled virtualized environments, offering insights into their performance and practical applications.
-  \end{abstract}
+\begin{abstract} 
+  Abstract-The wide adoption of virtualization technologies in embedded systems has brought up the demand for secure environments that protect against privileged adversaries. ARM TrustZone is a hardware-based TEE that provides a basis for securely executing sensitive operations. However, integrating TrustZone with virtualization platforms remains a challenge. In this work, QEMU and Xen are used to establish a robust development environment for emulating ARM TrustZone. QEMU, therefore, enhances TrustZone feature debugging, testing, and verification by offering a platform emulated from ARM for independent work from the actual physical hardware. Xen expands this virtualization capability with this hypervisor, whereby various separated operating systems can execute efficiently and at the same time not compromise on allowing supported TrustZone operations. Taken together, QEMU and Xen are a secure yet versatile combination for exploring and improving the potential of virtual systems' TrustZone. This paper is demonstrating the setup, integration, and evaluation of TrustZone-enabled virtualized environments that provide insights into their performance and practical applications. 
+\end{abstract}
 
 
     
@@ -80,49 +80,50 @@
 
 \subsection{Literature Review}
 
-The integration of Trusted Execution Environments (TEEs) with virtualization platforms has gained significant attention in recent years. ARM TrustZone, a hardware-based TEE, provides a secure environment for sensitive operations, yet its potential integration into virtualized systems remains underexplored. This section reviews key contributions in this domain and highlights how our solution stands out.
+TEEs combined with virtualization platforms have become increasingly popular over the past years. One such hardware-based TEE is ARM TrustZone, which provides a safe haven for sensitive operations. However, its integration into virtualized systems is still an underexplored area. This section discusses some key contributions in this domain and highlights how our solution stands out.
+Li et al. proposed TEEv, a virtualization framework that allows multiple isolated TEE instances to run concurrently on mobile platforms \cite{10.1145/3313808.3313810}. Their architecture, leveraging a hypervisor (TEE-visor), allows for the isolation of TEE instances and reduces security risks related to shared TEEs. However, TEEv focuses mainly on multi-TEE environments and does not discuss the functional integration of ARM TrustZone with hypervisors for system-level virtualization.\cite{7005255} \cite{10.1007/978-3-642-32298-3_1}
 
-Li et al. proposed TEEv, a virtualization framework that supports multiple isolated TEE instances (vTEEs) running concurrently on mobile platforms \cite{10.1145/3313808.3313810}. By leveraging a hypervisor (TEE-visor), their architecture enables the isolation of TEE instances, reducing security risks associated with shared TEEs. However, TEEv primarily focuses on multi-TEE environments and does not address the functional integration of ARM TrustZone with hypervisors for system-level virtualization.\cite{7005255} \cite{10.1007/978-3-642-32298-3_1}
+Harrison et al. proposed PARTEMU, a modular framework for emulating TrustZone software \cite{247658}. It is based on QEMU and PANDA and allows for the dynamic analysis of real-world TrustZone operating systems and applications. Although very powerful in finding vulnerabilities, PARTEMU does not support the integration of TrustZone with hypervisors like Xen, which plays an important role in virtualized system management.
 
-Harrison et al. introduced PARTEMU, a modular framework for emulating TrustZone software \cite{247658}. Built on QEMU and PANDA, PARTEMU enables dynamic analysis of real-world TrustZone operating systems and applications. While effective for vulnerability identification, PARTEMU lacks support for the integration of TrustZone with hypervisors like Xen, which is critical for managing virtualized systems.
+Yang and Lee used OP-TEE with QEMU to implement TEE Client APIs between the Normal World and Secure World \cite{10.1145/3426020.3426113}. In their work, they have provided a good starting point for security research. Their solution has again been designed for a single-system setup and does not extend the virtualization capability.\cite{10274941} \cite{10.1145/3426020.3426113} \cite{8352425}
 
-Yang and Lee demonstrated the use of OP-TEE with QEMU to implement TEE Client APIs for communication between the Normal World and Secure World \cite{10.1145/3426020.3426113}. Their work offers a foundation for security research but remains limited to single-system setups and does not explore virtualization capabilities.\cite{10274941}\cite{10.1145/3426020.3426113}\cite{8352425}
+Our approach extends these efforts further by incorporating ARM TrustZone into a Xen-based virtualized environment. Unlike TEEv, which focuses on multi-TEE scenarios, our work focuses on taking advantage of TrustZone in order to provide secure services in a single TEE architecture. Finally, QEMU emulates the ARM platforms for ease of debugging, testing, and performance benchmarking. Using QEMU together with Xen in this context provides an extended framework for exploring and enhancing TrustZone's potential in virtualized embedded systems.
 
-Our approach builds on these efforts by integrating ARM TrustZone into a Xen-based virtualized environment. Unlike TEEv, which emphasizes multi-TEE scenarios, our work focuses on leveraging TrustZone for secure services in a single TEE architecture. Additionally, we utilize QEMU to emulate ARM platforms, facilitating debugging, testing, and performance benchmarking. This combination of QEMU and Xen provides a comprehensive framework for exploring and enhancing TrustZone's potential in virtualized embedded systems.
 
 
 \subsection{Motivation}
-The rise of embedded systems and their integration into critical infrastructure has necessitated enhanced security measures. Hypervisors, while powerful, are vulnerable to attacks, which can compromise all systems running on the hardware. ARM TrustZone provides a solution by creating a Trusted Execution Environment (TEE) that is isolated from the rest of the system, offering protection against privileged adversaries. This project aims to explore the potential of running Xen hypervisor with support for OP-TEE (TrustZone Software) on a QEMU-emulated ARM environment. By doing so, we can extend the benefits of TrustZone to virtualized environments, enhancing the security of embedded systems.
+The growing presence of embedded systems in critical infrastructure has raised the need for better security. On the other hand, hypervisors are powerful yet vulnerable to attacks that might spill over into all systems running on the hardware. This is where ARM TrustZone steps in, providing a TEE that is somewhat isolated from the rest of the system and thus protected against privileged adversaries. Hence, this project will be about studying the possibility of running Xen hypervisor with OP-TEE TrustZone Software support on an ARM QEMU-emulated environment. Through such a study, we will be able to increase the security level of embedded systems by expanding the TrustZone benefits to virtualized environments.
 
 
 
 \subsection{Objective}
-This project aims to establish a robust and flexible development environment for exploring the integration of ARM TrustZone with virtualization technologies. Specifically, the objectives are as follows:
+The key outcome expected is the development of a stable, flexible development environment to try the integration of ARM TrustZone with virtualization technologies. This translates into the following set of concrete objectives:
 \begin{itemize}
-    \item Implement a Xen hypervisor with support for OP-TEE (TrustZone Software) within a QEMU-emulated ARM environment, enabling the emulation of TrustZone functionality without the need for physical hardware.
-    \item Facilitate research on the performance and security implications of combining TrustZone with virtualization, focusing on the potential benefits and trade-offs in a virtualized system.
-    \item Conduct benchmarking using tools like \textit{xtest} to evaluate the performance enhancements and security guarantees provided by TrustZone in single and multi-guest operating system scenarios.
-    \item Develop a deeper understanding of the operational mechanisms of virtualized systems with TrustZone integration, providing insights for future research and practical applications in embedded systems.
-\end{itemize}
-This work not only addresses the limitations of current hypervisor-TrustZone integration but also lays the foundation for advancing the security and functionality of virtualized embedded systems.
+    \item Port Xen hypervisor featuring OP-TEE (TrustZone Software) running within a QEMU-emulated ARM, to enable emulation of the functionality provided by TrustZone without any dependence on physical hardware.
+    \item It will research the performance-security consequences of combining TrustZone and Virtualization: focusing on a probably beneficial trade-off when doing virtualization. Benchmark performance-security using \textit{xtest}, to determine enhancement and security guarantees by TrustZone provided as a result of various methods of deploying the coprocessor in both single and multi-operating system guests.
+    \item Basic understanding of how virtualized systems with integrated TrustZone work, which will be helpful in future research and practical applications of embedded systems.
+  \end{itemize}
+
+ This work not only addresses current hypervisor-TrustZone integration limitations but also provides the foundation to advance both security and functionality for virtualized embedded systems.
 
 
 
 \section{Background}
 
 \subsection{ARM TrustZone Technology}
-ARM TrustZone is a hardware-based security technology integrated into many ARM processors, commonly used in mobile devices and embedded systems. It establishes a separation between two execution environments: the Secure World and the Normal World \cite{10.1145/3426020.3426113, partemu,10.1007/978-3-030-22496-7_9}.
 
-The Secure World provides a trusted execution environment (TEE) for performing sensitive operations, ensuring protection from potential threats in the Normal World. Key applications of the Secure World include:
+
+ARM TrustZone is a hardware-based security technology integrated into many ARM processors, widely used in mobile devices and embedded systems. It provides a strict separation between two execution environments: the Secure World and the Normal World \cite{10.1145/3426020.3426113, partemu,10.1007/978-3-030-22496-7_9}.
+
+The Secure World allows a TEE for sensitive operations to be executed safely, without the possibility of any threat from the Normal World. The most important uses of the Secure World are as follows:
+
 \begin{itemize}
   \item Storing cryptographic keys securely.
   \item Processing financial transactions and payments.
   \item Running secure boot mechanisms to validate system integrity.
 \end{itemize}\cite{ 10.1145/3313808.3313810, partemu,10.1007/978-3-030-22496-7_9}.
 
-This dual-world architecture enables TrustZone to enhance the security of embedded and mobile systems by isolating critical operations from untrusted components.
-
-
+The basic principle behind the TrustZone design is being an isolated world from non-trust parts, providing the means to enhance embedded and mobile system security.
 
 \subsection{Comparison of Hypervisor Architectures}
  
@@ -134,51 +135,53 @@ This dual-world architecture enables TrustZone to enhance the security of embedd
 \end{figure}
 
 
-Figure~\ref{fig:compare_hypervisor} illustrates the hypervisor architectures of Type-1 and Type-2 hypervisors compared to the structure used in this project. The hypervisor setup in this project differs significantly from conventional Type-1 and Type-2 hypervisors in both complexity and flexibility.
+Figure~\ref{fig:compare_hypervisor} highlights the hypervisor architectures of Type-1 and Type-2 hypervisors compared to the structure used in this project. The hypervisor set-up in this project is very different from the conventional Type-1 and Type-2 hypervisors, considering both complexity and flexibility.
 
 \paragraph{Type-1 Hypervisor:}
-A Type-1 hypervisor, also known as a bare-metal hypervisor, runs directly on the underlying hardware. Both the hypervisor and its guest operating systems share the same architecture as the hardware (e.g., x86 or ARM). While this design offers high performance and direct hardware access, it depends entirely on the hardware platform.
+A Type-1 hypervisor is also known as a bare-metal hypervisor. It runs directly on the underlying hardware. The hypervisor and its guest operating systems have exactly the same architecture as the hardware, for example, x86 or ARM. Such a design provides high performance and direct hardware access. However, it relies fully on the hardware platform.
 
 \paragraph{Type-2 Hypervisor:}
-A Type-2 hypervisor operates on top of a host operating system, relying on the host OS to manage hardware resources. Similar to Type-1 hypervisors, both the hypervisor and guest OSes must share the same architecture as the underlying hardware. This structure is easier to set up but adds overhead and remains tightly coupled to the hardware platform.
+A Type-2 hypervisor, on the other hand, executes on top of a host operating system and depends on this host OS to manage hardware resources. Similar to Type-1 hypervisors, it also requires that both the hypervisor and guest OSes use the same architecture as the base hardware. This is easier to set up but has more overhead and is tightly coupled to the hardware platform.
+
 
 \paragraph{This Project's Hypervisor Architecture:}
-In contrast, the hypervisor structure implemented in this project provides greater flexibility by decoupling the hypervisor and guest operating systems from the underlying hardware architecture. Using QEMU, the ARM CPU is emulated, enabling the Xen Type-1 hypervisor and guest OSes (ARM architecture) to run on an x86-based host machine. This hardware-independent design eliminates the architectural constraints imposed by conventional Type-1 and Type-2 hypervisors, allowing cross-platform testing and development.
+On the other hand, this project has adopted the hypervisor architecture, which decouples the hypervisor and guest operating systems from the original hardware architecture. Using QEMU, an emulation of the ARM CPU is allowed, thereby allowing the Xen Type-1 hypervisor and guest OSs (ARM architecture) to run on an x86 host machine. This design in a hardware-independent way avoids the architectural limitation of traditional Type-1 and Type-2 hypervisors, allowing cross-platform testing and development.
+
 
 \paragraph{Advantages of This Project's Architecture:}
 The added complexity of this setup is justified by the increased flexibility it provides:
-\begin{itemize}
-    \item \textbf{Cross-Platform Compatibility:} By emulating the ARM CPU, this architecture allows the hypervisor and guest OSes to run on any hardware, regardless of the underlying architecture.
-    \item \textbf{Hardware Independence:} Unlike conventional hypervisors, the virtualization stack does not depend on the hardware's native architecture, enabling secure and flexible experimentation in environments where physical ARM hardware is unavailable.
-    \item \textbf{Enhanced Testing and Development:} This architecture is ideal for developing and testing secure applications that leverage TrustZone, as it provides a controlled and reproducible virtualized environment.
-\end{itemize}
 
-This project demonstrates that by combining QEMU, Xen, and OP-TEE, it is possible to create a highly versatile and secure virtualization stack that surpasses the constraints of traditional hypervisor architectures.
+\begin{itemize}
+    \item \textbf{Cross-Platform Compatibility:} This allows the hypervisor and guest OSes to execute on any hardware, completely independent of the actual architecture, by emulating the ARM CPU.
+    \item \textbf{Hardware Independence:} Unlike traditional hypervisors, the virtualization stack is not bound to native hardware architecture, which allows flexibility in secure experimentation, especially when physical ARM hardware is not available.
+    \item \textbf{Enhanced Testing and Development:} This architecture is ideal to develop and test secure applications that leverage TrustZone since it provides a controlled, reproducible virtualized environment.
+\end{itemize}
+This project will be able to show that QEMU, Xen, and OP-TEE together can form a highly versatile and secure virtualization stack, breaking the limits of traditional hypervisor architectures.
 
 
 \subsection{QEMU: A System Emulator}
-QEMU is a versatile system emulator widely used in research and development to emulate various architectures, including x86, ARM, MIPS, RISC-V, and more. It serves as a critical tool for enabling cross-platform development and testing without requiring physical hardware \cite{efficient_virtualization, partemu, qemu_fast_portable}. \cite{10.5555/1247360.1247401}
+QEMU is a multi-purpose system emulator that is widely used in research and development to emulate many architectures, including x86, ARM, MIPS, RISC-V, and more. It is one of the enabling factors for cross-platform development and testing without requiring physical hardware \cite{efficient_virtualization, partemu, qemu_fast_portable}. \cite{10.5555/1247360.1247401}
 
-In the context of this project, QEMU plays a pivotal role by providing an ARM-emulated environment that supports the integration of ARM TrustZone with the Xen hypervisor. Its ability to emulate full systems, including CPUs, devices, kernels, and applications, makes it ideal for evaluating Trusted Execution Environments (TEEs) like OP-TEE. QEMU's system emulation mode allows the emulation of a complete computer system, including peripherals, enabling the virtual hosting of several virtual machines on a single physical host \cite{efficient_virtualization}.
+QEMU plays an important role in this project because it provides an ARM-emulated environment into which ARM TrustZone can be combined with the Xen hypervisor. This is because it emulates a full system: it emulates CPUs, devices, kernels, and applications - and is ideal for the evaluation process of TEEs like OP-TEE. The QEMU system would provide complete emulation of a computer system, including peripherals, thereby allowing numerous virtual machines to be run virtually on one physical host \cite{efficient_virtualization}.
 
-QEMU operates in multiple modes:
+QEMU operates in various modes:
+
+
 \begin{itemize}
-    \item \textbf{User-mode emulation:} This mode allows QEMU to execute individual Linux or Darwin/macOS programs compiled for different instruction sets. It translates system calls for endianness and architecture compatibility, making it a useful tool for cross-compilation and debugging.
-    \item \textbf{System emulation:} In this mode, QEMU emulates an entire computer system, including its peripherals. This capability supports the execution of various guest operating systems, such as Linux, Windows, Solaris, and BSD, across architectures like ARMv7, ARMv8, x86, and more \cite{qemu_fast_portable}.
-    \item \textbf{Hypervisor support:} QEMU can act as a Virtual Machine Manager (VMM) or as a device emulation back-end for virtual machines running under a hypervisor. When paired with a Kernel-based Virtual Machine (KVM) or hypervisors like Xen, it achieves near-native execution speeds while maintaining extensive emulation capabilities \cite{partemu}.
+    \item \textbf{User-mode emulation:} This mode enables QEMU to run single Linux or Darwin/macOS programs compiled for other instruction sets. It will translate system calls for endianness and architecture compatibility, but it does so quite well and is convenient for cross-compilation and cross-debugging.
+    \item \textbf{System emulation:} In full-system emulation mode, QEMU emulates a complete computer with its devices. This feature makes it possible to run several guest operating systems, including Linux, Windows, Solaris, and BSD, on various architectures, including ARMv7, ARMv8, x86, among others \cite{qemu_fast_portable}.
+    \item \textbf{Hypervisor support:} QEMU can be used either as a VMM or as a device emulation back-end for virtual machines running under a hypervisor. Combined with KVM or hypervisors such as Xen, near-native execution speeds are achieved while still offering broad emulation capabilities \cite{partemu}.
 \end{itemize}
 
-One of QEMU's core features is its use of Tiny Code Generator (TCG) to translate guest CPU instructions into equivalent host assembly instructions. This dynamic translation capability enables flexible and efficient execution of virtualized workloads, making QEMU an indispensable tool for developing and benchmarking systems that incorporate ARM TrustZone.
 
-Through its robust emulation features and support for a variety of architectures and virtualization setups, QEMU provides the foundation for this project's exploration of secure and virtualized environments with ARM TrustZone.
+One of the central features of QEMU is the use of Tiny Code Generator to dynamically translate guest CPU instructions into their equivalent host assembly instructions. This flexibility and efficiency in running virtualized workloads are especially important in developing and benchmarking systems that include ARM TrustZone.
 
-
+QEMU provides the base for this project, exploring secure and virtualized environments with ARM TrustZone through its powerful emulation features and support for a wide variety of architectures and virtualization setups.
 
 
 \section{System Design: Introduction to the Virtualization Stack}
 
-This section outlines the design and implementation of a virtualized environment to enable TrustZone-based applications on QEMU. we will explain how to enable a TrustZone-based application to run in a virtualized environment on QEMU in an X86 CPU. The process involves incrementally layering virtualization technologies, starting with the basic ARM CPU with TrustZone, then introducing the hypervisor to virtulize the TEE rich OS, and finally virtualizing the ARM CPU with QEMU. Below is a high-level overview of the stack:
-
+This section covers the design and implementation of a virtualized environment that can enable QEMU-based TrustZone applications. We will explain how to enable a TrustZone-based application running in a virtualized environment on QEMU on an X86 CPU. That will be done by incrementally adding virtualization technologies to an already existing base ARM CPU with TrustZone. This introduces the hypervisor, which is used to virtualize the TEE rich OS and to virtualize the ARM CPU with QEMU. Following is a high-level view of the stack:
 
 \begin{itemize}
     \item TrustZone Application (via OP-TEE)
@@ -192,8 +195,7 @@ We will explore each step in detail, showing how the system is built up layer by
 
 \subsection{Step 1: Bare Metal Machine. OS directly running on ARM CPU}
 
-The first step is to show the basic setup where Linux OS runs directly on an ARM CPU that supports TrustZone. TrustZone provides a hardware-based isolation mechanism, dividing the CPU into two "worlds": the secure world (TrustZone) and the non-secure world (Linux). Here, Linux directly interacts with the ARM CPU, running in the non-secure world while TrustZone applications run in the secure world. This setup represents the simplest form of running Linux with TrustZone support.
-
+First, it shows the simple configuration where the Linux OS runs on an ARM-supported CPU by TrustZone. This TrustZone provides a hardware-based isolation mechanism which divides the CPU into two "worlds": the secure world - that is, TrustZone - and the non-secure world, Linux. Here, one can see that Linux is directly communicating with the ARM CPU, running in a non-secure world, whereas applications run in the secure world. This is the most simple form of running Linux with support for TrustZone.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\columnwidth]{images/1.png}
@@ -204,17 +206,18 @@ The first step is to show the basic setup where Linux OS runs directly on an ARM
 
 
 \subsection{Step 2: Virtualize the OS by introducing Hypervisor}
-The next step involves introducing a hypervisor (in this case, Xen) to the system. The hypervisor provides a layer of abstraction, allowing multiple operating systems to run concurrently on the same hardware. In this scenario, Xen is installed on the ARM CPU, and Linux is virtualized into a guest operating system. The hypervisor ensures that the guest OSes are isolated from one another and the underlying hardware. This setup enables the secure TrustZone application to run alongside the virtualized Linux OS.
+This introduces the system to the hypervisor: Xen. A hypervisor-also called a VMM-further abstracts the hardware, thus offering the running of multiple OSs on one computer. So, Xen is going to run on top of the ARM CPU and then virtualize Linux, itself an OS, running as a guest OS. A hypervisor makes the operating systems-even guest ones-much farther away from the hardware so no guest OS acts upon it directly. This will provide the possibility to execute the secure TrustZone application along with the virtualized Linux OS.
 
-In this step, we introduce the concept of a hypervisor, which is critical to enabling the virtualization of the system. The hypervisor, in this case, Xen, runs directly on the ARM CPU and acts as a layer between the hardware and the operating systems (OSes) that need to run on top of it. 
+This is a very important step that involves introducing the hypervisor in order to enable virtualization of the system. In this case, the hypervisor used, Xen, executes directly on the ARM CPU and it sits between the hardware and the OSes to run atop of it.
 
-In our configuration, we utilize Xen as a Type 1 hypervisor. It runs directly on the ARM hardware, which allows it to manage the system's resources and allocate them efficiently to virtual machines (VMs). The Xen hypervisor introduces the concept of domains: 
+In our setup, a Type 1 hypervisor is used, namely Xen. Xen runs directly on the ARM hardware; this allows it to manage most of the physical resources of the system and give them - as efficiently as possible - to VMs. The presence of Xen introduces the concept of domains:
+
 \begin{itemize}
-    \item \textbf{Domain 0 (Dom0):} This is the privileged domain that has direct access to hardware resources and manages other domains. It typically runs a Linux-based OS, which is responsible for managing virtual devices and the overall virtualization environment.
-    \item \textbf{Domain U (DomU):} These are the unprivileged domains or virtual machines that run on top of Dom0. Each DomU runs its own guest operating system, which in our case is a Linux OS. DomU does not have direct access to hardware, and its interactions with the hardware must go through Dom0 or the hypervisor.
+    \item \textbf{Domain 0 (Dom0):} This is the privileged domain, which directly accesses hardware resources and controls other domains. It typically runs a Linux-based OS, which performs the tasks of managing virtual devices and, in general, the virtualization environment.
+    \item \textbf{Domain U (DomU):} These are the unprivileged domains or virtual machines running on top of Dom0. Each DomU will run its own guest operating system, which in our case is a Linux OS. The DomU does not have direct access to hardware, and interactions with the hardware must go through Dom0 or the hypervisor.
 \end{itemize}
 
-Xen ensures that these domains are isolated from one another, preventing one compromised domain from affecting the others. This isolation is a critical feature of virtualization as it allows multiple guest OSes to run safely on the same hardware, without interference.
+Xen ensures that these domains remain separated from each other in order not to let the problems occurring in one domain compromise any other. That is because the isolation principle is key for virtualization, meaning running multiple guest OSes securely on the same hardware without disturbing the others.
 
 
 
@@ -228,15 +231,15 @@ Xen ensures that these domains are isolated from one another, preventing one com
 
 \subsection{Step 3: Virtualizing the ARM CPU by QEMU}
 
-The final step in the virtualization stack leverages QEMU to emulate the ARM CPU on a non-ARM machine, such as an x86-based host. QEMU provides full system emulation, enabling the ARM architecture to function independently of physical hardware. This setup allows the Xen hypervisor to run on a virtualized ARM CPU, which, in turn, manages guest operating systems and facilitates TrustZone functionality.
+The last level of the virtualization stack is using QEMU to emulate the ARM CPU on a non-ARM host machine, like an x86-based one. QEMU will offer complete system emulation, allowing the ARM architecture to be self-sufficient with no use of physical hardware. Such a configuration would mean the Xen hypervisor can run on top of the virtualized ARM CPU, which again will manage guest operating systems and also provide functionality related to TrustZone.
 
 In this configuration:
 \begin{itemize}
-    \item \textbf{TrustZone Application:} Securely runs in the ARM TrustZone, isolated from the non-secure world.
-    \item \textbf{Linux Guest OS:} Operates in the non-secure world on the virtualized ARM hardware.
-    \item \textbf{Hypervisor (Xen):} Provides the virtualization layer, ensuring resource isolation and security.
-    \item \textbf{QEMU (ARM CPU Emulator):} Emulates the ARM architecture, enabling the stack to run on a non-ARM host.
-    \item \textbf{Host OS (AnyCPU):} Supplies the physical resources for virtualization and emulation.
+    \item \textbf{TrustZone Application:}  TrustZone application runs securely inside ARM TrustZone, separated from the non-secure world.
+    \item \textbf{Linux Guest OS:} runs in the non-secure world on top of the virtualized ARM hardware.
+    \item \textbf{Hypervisor (Xen):} to provide virtualization layer, maintain resource isolation and security.
+    \item \textbf{QEMU (ARM CPU Emulator):} Provides emulation for the ARM architecture, allowing the stack to run on a non-ARM host.
+    \item \textbf{Host OS (AnyCPU):} Provides the physical resources for Virtualization and Emulation.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -247,34 +250,34 @@ In this configuration:
 \end{figure}
 
 \subsection{Recap}
-In summary, the virtualization stack was built incrementally to enable TrustZone applications in a flexible and secure environment:
+The basic thought in designing the virtualization stack has been incremental towards the enabling of TrustZone applications, which are flexible but secure.
+
 \begin{itemize}
-    \item \textbf{Step 1: Bare-Metal Setup:} Linux was configured to run directly on an ARM CPU with TrustZone support, establishing the foundational hardware-based isolation between the Secure World and Non-Secure World.
-    \item \textbf{Step 2: Virtualization with Xen:} The Xen hypervisor was introduced to virtualize the ARM CPU, enabling the concurrent execution of multiple isolated guest operating systems.
-    \item \textbf{Step 3: Emulation with QEMU:} QEMU was employed to emulate the ARM CPU, allowing the entire stack to operate seamlessly on non-ARM hardware, such as x86-based platforms.
+    \item \textbf{Step 1: Bare-Metal Setup:} It was also installed to run directly on an ARM CPU with TrustZone support, which provides the basic hardware-based isolation between Secure World and Non-Secure World.
+    \item \textbf{Step 2: Virtualization with Xen:} The Xen hypervisor virtualized the ARM CPU, which can support multiple independent guest operating systems running simultaneously.
+    \item \textbf{Step 3: Emulation with QEMU:} QEMU was used to emulate the ARM CPU, which allowed the entire stack to run without issue on non-ARM hardware, such as that using x86-based platforms.
 \end{itemize}
 
-This step-by-step approach integrates TrustZone with virtualization and emulation technologies, showcasing a scalable framework for testing, debugging, and researching secure applications in virtualized embedded systems. By combining the strengths of QEMU and Xen, the stack achieves both hardware independence and robust isolation, making it a versatile tool for advancing TrustZone-based research.
+This will be demonstrated in an integrated step-by-step approach with virtualization and emulation technologies to show a scalable framework for testing, debugging, and researching secure applications in virtualized embedded systems. Combining strengths from QEMU and Xen, this stack reaches hardware independence with robust isolation, thereby making it a versatile tool to advance TrustZone-based research.
 
 
 
-% \section{Evaluation}
-% \section{Conclusion \& Discussion}
+
 \section{Implementation}
+This section describes the implementation of the virtualization stack to allow TrustZone-based applications.
 
-This section describes the implementation of the virtualization stack to enable TrustZone-based applications. 
+Most of the virtualization stack was implemented based on the work of Denis Obrezkov, which gave guidelines on how to set up Xen, QEMU, and Linux configurations \cite{obrezkov2019xen}. Nevertheless, our work is using the latest versions of the software in order to be compatible and have better functionality. In terms of TEE parts, we used the official OP-TEE documentation on how to correctly implement and configure secure world operations \cite{optee_docs}.
 
-The implementation of the virtualization stack primarily followed the guidance provided by Denis Obrezkov for setting up Xen, QEMU, and Linux configurations \cite{obrezkov2019xen}. However, our work leverages the most up-to-date software versions to ensure compatibility and improved functionality. For the Trusted Execution Environment (TEE) components, we relied on the official OP-TEE documentation to ensure proper integration and configuration of secure world operations \cite{optee_docs}.
 
 \subsection{System Components}
-Our implementation relies on the following primary components:
+Our system uses the following key components to perform the tasks assigned to it: 
 \begin{itemize}
-  \item \textbf{Trusted Execution Environment:} Trusted Application Benchmark (xtest) in Normal World, along with OP-TEE Core within Secure World to manage and execute trusted applications.
-    \item \textbf{Hypervisor:} Xen hypervisor with experimental support for OP-TEE, providing robust virtualization capabilities.
-    \item \textbf{ARM Emulator:} QEMU configured with ARM virtualization extensions to emulate the ARM CPU and facilitate the virtualization stack on x86-based hardware.
+  \item \textbf{Trusted Execution Environment:} Trusted Application running in the Normal World and OP-TEE Core.
+    \item \textbf{Hypervisor:} Xen hypervisor, experimental OP-TEE support, providing strong virtualization competency.
+    \item \textbf{ARM Emulator:} QEMU to emulate the ARM CPU and enable the virtualization stack on x86-based hardware.
     \item \textbf{Guest Operating Systems:} Linux kernel, compiled for both secure and non-secure environments, running as guest OSes.
-    \item \textbf{Bootloader:} U-Boot to initialize the system and load the Xen hypervisor and guest operating systems.
-    \item \textbf{Utility Tools:} BusyBox for creating a lightweight root filesystem for the guest Linux environments.
+    \item \textbf{Bootloader:} U-Boot for system initialization and loading of the Xen hypervisor and guest operating systems.
+    \item \textbf{Utility Tools:} BusyBox to create a lightweight root filesystem for the guest Linux environments.
 \end{itemize}
 
 
@@ -297,31 +300,30 @@ The key software components used in our implementation include:
 
 
 \subsection{Role of the Hypervisor in OP-TEE Integration}
+This is to allow the hypervisor to manage safe interactions between the guest virtual machines and OP-TEE. Different challenges exist for virtualization and security on OP-TEE being directly called by the virtual machines, such as virtual address address space, requiring OP-TEE to be cognisant of VM creation/ destruction and which VM the calling is coming from. Besides, the hypervisor also provides memory isolation such that a VM cannot reference another VM's memory when operating against OP-TEE. The hypervisor solves these challenges to securely and efficiently integrate OP-TEE in the virtualized environment. OP-TEE needs to track the life cycle of VMs. So it provides two special
+calls:
 
-The hypervisor plays a critical role in facilitating secure interaction between virtual machines (VMs) and the Trusted Execution Environment (TEE) provided by OP-TEE. VMs cannot directly call OP-TEE due to several virtualization and security challenges, including the lack of physical address awareness, the need for OP-TEE to track VM creation and destruction, and the requirement to identify which VM is making a request. Additionally, the hypervisor ensures memory isolation, preventing one VM from referencing another VM's memory when interacting with OP-TEE. By addressing these challenges, the hypervisor enables secure and efficient integration of OP-TEE into the virtualized environment. OP-TEE need to track life cycle of VMs. So it provides two special
-calls: 
 \begin{itemize}
   \item \texttt{OPTEE\_SMC\_VM\_CREATED VMID}
   \item \texttt{OPTEE\_SMC\_VM\_DESTROYED VMID}
 \end{itemize}
-Hypervisor informs OP-TEE about VM creation or destruction by issuing above SMCs.
 
+Hypervisor notifies OP-TEE for VM creation or destruction by issuing the above SMCs.
 
 
 \subsection{OP-TEE Virtualization Support: XEN TEE Mediator}
+OP-TEE has experimental support for virtualization, enabling one OP-TEE instance to securely run TAs originating from several VMs. It does this by keeping the states of the different VMs isolated within OP-TEE so that operations coming from one VM cannot affect another. Such isolation is crucial for the integrity and security of TEEs in virtualized systems.
+In a virtualized environment, OP-TEE relies on the hypervisor to mediate access between VMs and the TEE. The hypervisor does the following:
 
-OP-TEE provides experimental support for virtualization, allowing a single OP-TEE instance to securely execute Trusted Applications (TAs) from multiple virtual machines (VMs). This is achieved by isolating VM-specific states within OP-TEE, ensuring that operations from one VM cannot affect another. Such isolation is critical for maintaining the integrity and security of Trusted Execution Environments (TEEs) in virtualized systems.
-
-In a virtualized setup, OP-TEE relies heavily on the hypervisor to mediate interactions between VMs and the TEE. The hypervisor is responsible for:
 \begin{itemize}
-    \item Identifying which VM is making a request to OP-TEE.
-    \item Informing OP-TEE about the creation and destruction of VMs to manage secure resources effectively.
-    \item Translating Intermediate Physical Addresses (IPAs) used by VMs into Physical Addresses (PAs) required by OP-TEE, as OP-TEE cannot process IPAs directly.
+  \item Identifying which VM is making a request to OP-TEE.
+  \item Informing OP-TEE about the creation and destruction of VMs to manage secure resources effectively.
+  \item Translating Intermediate Physical Addresses (IPAs) used by VMs into Physical Addresses (PAs) required by OP-TEE, as OP-TEE cannot process IPAs directly.
 \end{itemize}
+It achieves this through a dedicated Xen component known as "TEE Mediator." This acts to securely relay information from the VM to OPTEE and vice-versa while ensuring proper isolation and performing proper address translations in both ways.
 
-To support these functions, Xen includes a specialized component called the "TEE Mediator." This mediator ensures secure communication between VMs and OP-TEE while maintaining isolation and proper address translations.
+Basic support for OP-TEE within Xen can be enabled through an interactive, menu-based configuration, or as a noninteractive, command-line configuration.
 
-To enable OP-TEE support in Xen, two configuration methods can be used: interactive menu-based configuration and non-interactive command-line configuration.
 
 \paragraph{Interactive Menu Configuration:}
 \begin{enumerate}
@@ -347,13 +349,14 @@ CONFIG_OPTEE=y     # Enable OP-TEE mediator support
 \end{lstlisting}
 
 
-By enabling OP-TEE support through either method, Xen becomes capable of securely managing interactions between VMs and the Trusted Execution Environment. This setup is critical for testing and deploying TrustZone-based applications in virtualized environments.
+Either way, the enabling of OP-TEE support allows Xen to securely manage interactions between VMs and the Trusted Execution Environment. It becomes crucial for testing and deploying TrustZone-based applications on virtualized environments.
 
 
 \subsection{OP-TEE Linux Kernel Support}
-The OP-TEE driver in the guest VM kernel is essential for enabling secure communication between the guest operating system and the Trusted Execution Environment (TEE) provided by OP-TEE. In a virtualized environment, guest VMs rely on the hypervisor to manage hardware resources, but direct access to TrustZone features is not inherently available to these VMs. The OP-TEE driver acts as an intermediary, allowing guest applications to issue secure requests to OP-TEE. This integration ensures that security-critical operations, such as cryptographic computations and secure storage, can be performed in the TEE without exposing sensitive data to the untrusted hypervisor or other guest VMs. Furthermore, the driver abstracts the complexity of managing TrustZone interactions, enabling seamless use of OP-TEE services within the virtualized ecosystem, thus enhancing the security capabilities of the guest VM.
+The OP-TEE driver in the guest VM kernel is essential for the guest OS to interact securely with the TEE provided by OP-TEE. In a virtualized environment, the hypervisor manages hardware resources on behalf of guest VMs, but direct access to the features of TrustZone is not inherently provided to such VMs. The OP-TEE driver acts as an intermediary to the requests of guest applications for secure processing to OP-TEE. In this way, it ensures that all security-sensitive operations-such as cryptographic computations and key storage-are executed in the TEE without disclosure of sensitive data to an untrusted hypervisor or other guest VMs. Furthermore, the driver abstracts the complexity of managing TrustZone interactions, allowing for smooth use of the OP-TEE services from within the virtualized environment, thereby increasing the security features of the guest VM.
 
-To enable the OP-TEE driver in the guest VM kernel, the configuration must be set within the Linux kernel menuconfig tool. The specific path to access and configure this driver is:
+To enable the OP-TEE driver in the guest VM kernel, configuration should be made inside the Linux kernel menuconfig tool. The path to reach this driver in order to configure it is:
+
 \texttt{.config - Linux/x86 6.1.18 Kernel Configuration -> Device Drivers -> Trusted Execution Environment Support}
 
 The following commands and configurations are applied via the command line:
@@ -371,52 +374,52 @@ The following commands and configurations are applied via the command line:
 
 \section{Benchmark Performance Analysis}
 
-The \textit{xtest} benchmark suite was executed to evaluate the performance of the OP-TEE Trusted Execution Environment (TEE) in the context of our virtualization stack. The results provide critical insights into the feasibility of integrating OP-TEE with Xen and QEMU to enable secure applications in virtualized embedded systems.
+The \textit{xtest} A benchmark suite was run in order to evaluate the performance of the OP-TEE TEE in the context of our virtualization stack. These results are important in understanding the feasibility of using OP-TEE with Xen and QEMU for enabling secure applications in virtualized embedded systems.
 
 \subsection{Results Overview}
-The benchmark suite completed 24 subtests successfully, with no failures, indicating the stability of the OP-TEE environment within the virtualized setup. Key observations include:
+The benchmark suite ran successfully through the 24 sub-tests with no failures; in summary, the virtualized set up OP-TEE environment had shown stability. Key observations:
 
 \begin{itemize}
-    \item \textbf{Trusted Storage Performance:} Write operations were efficient for smaller data sizes (up to 28.57 kB/s for 1 KB), but performance decreased significantly for larger files (17.09 kB/s for 1 MB). Read operations consistently outperformed writes, peaking at 250 kB/s for 2 KB, but dropped to 134.95 kB/s for 1 MB.
+    \item \textbf{Trusted Storage Performance:} Writes performed well for smaller sizes-28.57 kB/s for 1 KB, but it tumbled to 17.09 kB/s in the case of big sizes such as 1 MB. Read operations are always better than writes with maximum of 250 KBs when 2 KB can fit inside cache and for 1MB dropped down to 134.95 kB/s.
     \item \textbf{Cryptographic Performance:} 
     \begin{itemize}
-        \item SHA1 achieved a mean speed of 0.48 MiB/s, while SHA256 performed significantly better at 2.22 MiB/s, demonstrating the TEE's capability to handle secure hash operations efficiently.
-        \item AES encryption showed stable performance, with ECB mode achieving 0.61 MiB/s and CBC mode slightly higher at 0.63 MiB/s.
+        \item SHA1 averaged 0.48 MiB/s, while SHA256 was much faster at 2.22 MiB/s, showing the efficiency of the TEE in performing secure hash operations.
+        \item AES-ENCRYPTION was quite stable; for example, ECB mode had 0.61 MiB/s, while CBC mode had 0.63 MiB/s.
     \end{itemize}
-    \item \textbf{Rewriting Data:} Rewrites exhibited a similar trend to writes, with small data sizes performing efficiently but a sharp decline in speed for larger files.
+    \item \textbf{Rewriting Data:} Rewrite also followed a similar pattern to write: for smaller sizes, it was quite efficient but bigger file sets sharply lowered the speed.
 \end{itemize}
 
 \subsection{Project-Specific Insights}
-The benchmark results align closely with the objectives of this project, demonstrating the viability of integrating OP-TEE with a Xen-based virtualized environment on QEMU. Key takeaways include:
+The results are very close to the objectives of this project, which means it is feasible to integrate OP-TEE with a Xen-based virtualized environment on QEMU. Key takeaways include:
 
 \begin{itemize}
-    \item \textbf{Secure Storage Limitations:} While the TEE effectively secures storage operations, the performance degradation for larger data sizes highlights potential bottlenecks in scenarios involving high-throughput applications. This aligns with the project's focus on testing and identifying limitations in the current implementation.
-    \item \textbf{Cryptographic Workloads:} The strong performance in SHA and AES benchmarks validates OP-TEE's suitability for handling cryptographic tasks within a secure environment. This result is significant for the project's goal of evaluating the TEE's ability to support security-critical applications in a virtualized setup.
-    \item \textbf{Single-VM Context:} The benchmarks confirm the functional stability of OP-TEE in the current single-VM configuration. However, the project's requirement to support multiple VMs presents a challenge, as performance implications for multi-VM setups remain unexplored.
+    \item \textbf{Secure Storage Limitations:} While the TEE securely protects storage operations, performance degradation with respect to larger data sizes does bring out potential bottlenecks for high-throughput applications. This falls in line with testing the limitations within the current implementation, which was the focus of the project.
+    \item \textbf{Cryptographic Workloads:} Such a high score in SHA and AES benchmarks again proved OPTEE to be suitable for performing cryptographic tasks in the secure environment, which is crucial for this project focused on studying whether the TEE would be able to support security-critical applications in virtualized setups.
+    \item \textbf{Single-VM Context:} Benchmarks indeed confirm that in the current configuration of a single VM, OP-TEE is functionally stable, but the project requirement to support multiple VMs complicates things since performance implications for multi-VM setups remain unexplored.
 \end{itemize}
 
 \subsection{Implications for Virtualized Embedded Systems}
-The results underscore the strengths and challenges of leveraging OP-TEE in virtualized environments:
+Results will highlight the strengths and challenges of using OP-TEE in virtualized environments.
 \begin{itemize}
-    \item \textbf{Strengths:} Cryptographic operations and secure isolation were efficiently managed, indicating that OP-TEE can provide robust security services within a virtualized system.
-    \item \textbf{Challenges:} The performance decline for large-scale storage operations and the absence of multi-VM support reveal critical areas for improvement to meet production-level demands.
+    \item \textbf{Strengths:} Efficient handling of cryptographic operations, secure isolation was in place, meaning that OPTEE may achieve appropriate security services within a virtualized system.
+    \item \textbf{Challenges:} Performance degradation in case of large-scale storage operations, support for multiple VMs are the key areas that need refinement before going into production-level demands.
 \end{itemize}
 
-Overall, the benchmarks demonstrate that the integration of OP-TEE with Xen and QEMU provides a secure and functional foundation for virtualized embedded systems. Future work will focus on addressing identified limitations to scale this solution for multi-VM environments, aligning with the project's long-term objectives.
+Overall, the benchmarks show that the integration of OP-TEE with Xen and QEMU offers a secure and functional foundation for virtualized embedded systems. Future work will focus on addressing identified limitations to scale this solution for multi-VM environments, aligning with the project's long-term objectives.
+
 
 
 \section{Challenges}
+The implementation of the virtualization stack encountered several problems. Some problems were indeed real mistakes in the original tutorial \cite{obrezkov2019xen}, while others involved differences introduced by software updates, as we used significantly newer versions of Xen, QEMU, Linux, U-Boot, and OP-TEE. That is, five years passing by means lots of changes in behavior, configuration options, compatibility requirements, which require readjustments and debugging to match the updated software ecosystem.
 
-During the implementation of the virtualization stack, several challenges were encountered. While some issues stemmed from real mistakes in the original tutorial \cite{obrezkov2019xen}, others were due to differences introduced by software updates, as we used significantly newer versions of Xen, QEMU, Linux, U-Boot, and OP-TEE. These updates, spanning over five years, led to changes in software behavior, configuration options, and compatibility requirements, necessitating adjustments and debugging to align with the updated software ecosystem.
 
 
 \subsection{BusyBox Hardware Acceleration Compatibility}
+That is, for example, to compile BusyBox to run on QEMU with Xen, all HWA should be turned off. Most virtualized environments don't support direct hardware acceleration, like NEON on ARM platforms. Because of this, enabling HWAs at compile time may result in build breaks or runtime problems because emulated environments don't support hardware-accelerated instructions.
 
-When compiling BusyBox for use in a virtualized environment like QEMU with Xen, it is essential to disable hardware acceleration (HWA) features. This is because virtualized environments typically do not provide direct access to hardware acceleration, such as NEON on ARM platforms. Enabling HWA during compilation can result in build failures or runtime issues due to the lack of support for hardware-accelerated instructions in emulated environments.
+Due to compatibility reasons, HWA should be explicitly disabled in BusyBox configuration to make the build consistent with the constraints of the virtualized environment.
 
-To ensure compatibility, HWA must be explicitly disabled in the BusyBox configuration, aligning the build with the constraints of the virtualized environment.
-
-To compile BusyBox without hardware acceleration, follow these steps:
+To compile BusyBox without hardware acceleration:
 
 \begin{lstlisting}[language=bash, caption=Solution to HWA Fault]
 # Disable Hardware Acceleration in configuration
@@ -425,12 +428,12 @@ sed -i 's/CONFIG_SHA256_HWACCEL=y/CONFIG_SHA256_HWACCEL=n/' .config
 \end{lstlisting}
 
 
-By disabling hardware acceleration, the compiled BusyBox binaries rely solely on software implementations. This ensures compatibility and stable performance in virtualized environments, avoiding potential issues with unsupported hardware features.
-
+In the case of BusyBox, compiled binaries would disable hardware acceleration completely and rely on the software part. This guaran-tantly assures compatibility and stable performance inside virtualized environments without potential problems with unsupported hardware features.
 
 
 \subsection{BusyBox Compilation Failure with Traffic Control Utility}
-During the compilation of BusyBox, a issue was encountered when enabling support for the \texttt{tc} (traffic control) utility. The problem arises due to the removal of the \texttt{CBQ (Class-Based Queuing)} feature from the Linux kernel. Specifically, the kernel headers no longer define the constant \texttt{TCA\_CBQ\_MAX}, which is referenced in the BusyBox source code.
+
+There are some problems being thrown up when trying to add on \texttt{tc} (traffic control) command under compilation of BusyBox. Reasons of security and since the feature was found largely unused,  \texttt{CBQ (Class-Based Queuing)} had already been removed from the Linux Kernel in which the header definitions - namely \texttt{TCA\_CBQ\_MAX} utilized in BusyBox sourcecode resides.
 
 \begin{lstlisting}[language=bash, caption=Failure on compile BusyBox]
 networking/tc.c: In function cbq_print_opt:
@@ -441,7 +444,7 @@ networking/tc.c:236:27: error: TCA_CBQ_MAX undeclared
       |                           TCA_CBS_MAX
 \end{lstlisting}
 
-\paragraph{Root Cause:}The \texttt{tc} utility relies on kernel features like CBQ for traffic shaping and queuing. With these features deprecated and subsequently removed from newer kernel versions, the corresponding BusyBox code referencing \texttt{TCA\_CBQ\_MAX} cannot compile.
+\paragraph{Root Cause:}The \texttt{tc} utility relies on kernel features such as CBQ for traffic shaping and queuing. These are deprecated and removed in newer versions of the kernel, which means that the corresponding BusyBox code using \texttt{TCA\_CBQ\_MAX} cannot compile.
 
 To resolve this, \texttt{tc} support needs to be disabled in BusyBox's configuration file (\texttt{.config}). This can be done using the following command:
 
@@ -458,7 +461,7 @@ Disabling \texttt{tc} is a practical workaround if traffic control functionality
 \subsection{QEMU stuck on loading unsupported GPIO module}
 QEMU with Xen Stuck on Loading Linux as \texttt{dom0}
 
-A challenge was encountered when running QEMU with Xen to start Linux as \texttt{dom0}. The system would get stuck during the boot process due to issues related to the Advanced Microcontroller Bus Architecture (AMBA) compliant controller. This problem manifested in the output as follows:
+There was a problem in running QEMU with Xen to bring up Linux as \texttt{dom0}. It would hang somewhere during boot up due to some problem with the AMBA compliant controller. This would be manifested as :
 
 \begin{lstlisting}[language=bash, caption=QEMU stuck on unsupported GPIO module]
 # Start the QEMU virtual emulation
@@ -481,9 +484,9 @@ $ qemu-system-aarch64  -machine virt,gic_version=3 -machine virtualization=true 
 
 The process would hang indefinitely, requiring manual intervention to terminate.
 
-\paragraph{Root Cause:}The problem is linked to the ARM \texttt{PL061} GPIO module, which is part of the AMBA controller. Xen attempts to manage this hardware during boot, but it lacks full support for the \texttt{PL061} module in the current configuration. As a result, Xen gets stuck in an unhandled state.
+\paragraph{Root Cause:}This problem is related to the ARM \texttt{PL061} GPIO module of the AMBA controller. At boot time, Xen tries to handle the underlying hardware but, with the current configuration, does not have complete support for the \texttt{PL061} module. Due to this, Xen goes into an unhandled state.
 
-The solution involves disabling the \texttt{PL061} controller in the device tree. This prevents Xen from trying to initialize unsupported hardware during the boot process. This can be achieved with the following steps:
+The solution involves disabling the \texttt{PL061} controller in the device tree. This prevents Xen from trying to initialize unsupported hardware during the boot process. The steps are as follows:
 
 \begin{lstlisting}[language=bash, caption=Solution to QEMU stuck]
 dtc -I dtb -O dts virt-gicv3.dtb > virt-gicv3.dts
@@ -491,20 +494,21 @@ sed 's/compatible = "arm,pl061.*/status = "disabled";/g' virt-gicv3.dts > virt-g
 dtc -I dts -O dtb virt-gicv3-edited.dts > virt-gicv3.dtb
 \end{lstlisting}
 
-This procedure modifies the device tree to disable the incompatible \texttt{PL061} controller, allowing the system to proceed past the stuck state.
 
-After applying these changes, QEMU successfully boots Linux as \texttt{dom0} under Xen without hanging. This solution provides a temporary workaround for environments where the \texttt{PL061} module is unnecessary or unsupported.
+This procedure modifies the device tree to disable the incompatible \texttt{PL061} controller, enabling the system to get past this hang state.
+
+Applying the above, QEMU boots Linux as \texttt{dom0} under Xen with no hang. This is a temporary workaround in environments where the \texttt{PL061} module is not needed or supported.
 
 
 
+\subsection{Starting QEMU with Xen and Two Linux Guests}
 
-\subsection{Launching QEMU with Xen and Two Linux Instances}
+This exercise starts QEMU to run Xen and boot two Linux guests (\texttt{dom0} and \texttt{domU1}). Since newer versions of Linux images have different sizes, the setup of memory and device tree must be adjusted accordingly.
 
-This challenge involves configuring QEMU to run Xen and boot two Linux instances (\texttt{dom0} and \texttt{domU1}). The procedure requires careful memory and device tree setup due to changes in the size of Linux images in newer releases.
+\paragraph{QEMU Start Command}
 
-\paragraph{QEMU Launch Command}
+The following starts QEMU with Xen, two Linux kernels and their root file systems:
 
-The following command initializes QEMU with Xen, two Linux kernels, and their corresponding root file systems:
 
 \begin{lstlisting}[language=bash, caption=Designed Device Layout]
 qemu-system-aarch64 \
@@ -524,11 +528,12 @@ qemu-system-aarch64 \
     -mon qemu-monitor,mode=readline
 \end{lstlisting}
 
-% \subsubsection{Key Insight: Adapting to Larger Linux Images}
+\subsubsection{Scaling with larger Linux Images}
 
-The size of the compiled Linux guest OS has increased in newer releases compared to the versions used in older tutorials. This increase can result in a \texttt{FDT\_ERR\_NOSPACE} error during boot due to insufficient space in the Flattened Device Tree (FDT).
+The size of the compiled Linux guest OS is larger in the newer releases compared to the versions used in older tutorials. This may lead to a \texttt{FDT\_ERR\_NOSPACE} error at boot time since there is not enough space in the Flattened Device Tree (FDT).
 
-U-Boot may failed with some error like this due to the larger image size.
+U-Boot can fail with some error like this from the larger image size.
+
 \begin{lstlisting}[language=bash, caption=U-Boot error due to different image size]
   libfdt fdt_setprop(): FDT_ERR_NOSPACE
   chosen {
@@ -537,9 +542,8 @@ U-Boot may failed with some error like this due to the larger image size.
 \end{lstlisting}
 
 
-To resolve this, it's necessary to include the \texttt{fdt resize} command before certain FDT modifications. This step ensures that the FDT can accommodate larger configurations.
+To work around this, \texttt{fdt resize} needs to be executed prior to some FDT operations so that the FDT itself can support larger configurations.
 
-% \subsubsection{U-Boot Configuration}
 
 Below is the updated U-Boot configuration sequence:
 
@@ -555,35 +559,36 @@ fdt mknod /chosen/domU1 module@1
 \end{lstlisting}
 
 
-The key takeaway is that modern Linux kernels and images are significantly larger than their predecessors. This necessitates the use of \texttt{fdt resize} to prevent FDT errors and ensure a smooth boot process.
+
+The takeaway here is that the modern Linux kernels and images are way larger in size compared to their ancestors. Also, using \texttt{fdt resize} prevents FDT errors, which allows smooth booting.
+
 
 \section{Limitation}
+Currently in the project, OP-TEE's feature is restricted to be enabled on only a single virtual machine (VM). Project requirement wants OP-TEE enable on two VMs but during its enablement, below was found as a limitation :
 
-At the current stage of the project, the OP-TEE feature is limited to supporting a single virtual machine (VM). While the project requirements specify the need to enable OP-TEE across two VMs, the following limitations were encountered:
+\textbf{Single-VM Support in OP-TEE:} OP-TEE only supports one VM. Handling more than one VM requires major changes in the existing implementation of OP-TEE. As a matter of fact, none of the tutorials/configurations in the existing OP-TEE tutorials/configurations support more than one VM for direct use.
 
-\textbf{Single-VM Support in OP-TEE:} The current implementation of OP-TEE is designed to handle Trusted Applications (TAs) for a single VM. Extending this functionality to multiple VMs requires significant modifications and is not directly supported by the existing tutorials or configurations.
-
-
-These limitations underscore the challenges of scaling OP-TEE for multi-VM setups and highlight areas for further development to meet the project’s requirements.
+These limitations outline the scaling issues in OP-TEE for multi-VM and provide insight into areas that could be further developed to meet the project's requirements.
 
 
 \section{Future Work}
 
-One promising direction for future work is to combine the OP-TEE tutorial with the multi-VM setup outlined in the Xen wiki tutorial to enable support for multiple virtual machines (VMs). This enhancement would simulate a more realistic production environment, where multiple VMs can securely interact with a single OP-TEE instance.
+One promising direction for further work is the combination of the OP-TEE tutorial with the multi-VM setup from the Xen wiki tutorial to enable support for multiple virtual machines. That way, it will be able to simulate a real production environment where multiple virtual machines can securely interact with a single instance of OP-TEE.
 
-However, achieving this goal requires addressing several challenges. Notably, OP-TEE has certain hardcoded configurations, such as the memory loading address for the secure image. Modifying these settings to accommodate multiple VMs demands additional effort and a deeper understanding of both OP-TEE's architecture and the Xen hypervisor's virtualization mechanisms. Overcoming these limitations would pave the way for advanced research into secure multi-VM environments using OP-TEE and Xen.
+However, reaching this involves addressing some challenges. The main point is that OP-TEE has some hard-coded configurations; for example, the memory loading address for the secure image. These settings will have to be changed if one intends to use multiple VMs, which requires more work and also a deeper understanding of both OP-TEE's architecture and the Xen hypervisor's virtualization mechanisms. Such limitations, if surpassed, will widen the advanced research on OP-TEE and Xen about the secure multi-VM environment.
+
 
 
 
 \section{Conclusion}
 
-This project successfully implemented a virtualization stack integrating OP-TEE with the Xen hypervisor and QEMU emulator to evaluate the feasibility of enabling Trusted Execution Environment (TEE) functionality in a virtualized embedded system. The results from the \textit{xtest} benchmarks demonstrated the stability and performance of OP-TEE within a single-VM setup, validating its capability to securely handle cryptographic and storage operations.
+This project implemented a virtualization stack using the integration of OP-TEE with a Xen hypervisor and a QEMU emulator for studying the feasibility in enabling TEE functionality on a virtualized embedded system. Results from the \textit{xtest} benchmarks demonstrate stability and performance of OP-TEE in a single VM setting that is capable of processing cryptographic and storage operations securely.
 
-However, the project also highlighted key limitations, including the lack of multi-VM support and performance bottlenecks for large-scale trusted storage operations. These findings underscore the need for further optimization and development to address scalability challenges and enhance the usability of OP-TEE in production environments.
+This, in turn, demonstrated that there is significant restriction to multi-VM support and performance bottlenecks when it comes to large-scale trusted storage operations. A finding that underlines further optimizations required for scalability challenges and ease of use in the OP-TEE for production environments.
 
-Despite these challenges, this work provides a solid foundation for future research into secure virtualization. The integration of OP-TEE with Xen and QEMU not only demonstrates the viability of deploying TEEs in virtualized setups but also identifies critical areas for improvement. Future efforts will focus on extending support to multiple VMs and refining secure storage mechanisms to better meet the demands of real-world applications.
+This work lays a concrete foundation for further research into secure virtualization despite these challenges. The integration of OP-TEE with Xen and QEMU not only shows the feasibility of deploying TEEs in virtualized setups but also helps identify key areas that need attention. Future work will involve support for multiple VMs and further refining the ideas of secure storage mechanisms to meet real-world application demands.
 
-This project contributes to advancing the field of secure embedded systems, offering insights into the integration of hardware-based security technologies with modern virtualization platforms.
+Work here contributes to the furtherance of knowledge in secure embedded systems, with insight into the integration of hardware-based security technologies with state-of-the-art virtualization platforms.
 
 
 

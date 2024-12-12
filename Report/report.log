@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.18)  4 DEC 2024 13:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.18)  12 DEC 2024 05:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1161,100 +1161,99 @@ LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 9.0pt on input line 102.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 104.
-
-Underfull \vbox (badness 1769) has occurred while \output is active []
-
+(Font)              scaled to size 9.0pt on input line 103.
 
 
 [1.1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_afusau.enc}
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}]
-<images/type12_hyper.png, id=191, 529.104pt x 268.713pt>
+<images/type12_hyper.png, id=192, 529.104pt x 268.713pt>
 File: images/type12_hyper.png Graphic file (type png)
 <use images/type12_hyper.png>
-Package pdftex.def Info: images/type12_hyper.png  used on input line 131.
+Package pdftex.def Info: images/type12_hyper.png  used on input line 132.
 (pdftex.def)             Requested size: 243.14749pt x 123.48647pt.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 132.
+(Font)              scaled to size 8.0pt on input line 133.
 
 
-Class acmart Warning: A possible image without description on input line 134.
+Class acmart Warning: A possible image without description on input line 135.
 
 
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 151.
+(Font)              scaled to size 9.0pt on input line 155.
 
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 164.
+(Font)              scaled to size 7.0pt on input line 173.
 LaTeX Font Info:    Font shape `TS1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 164.
+(Font)              scaled to size 7.0pt on input line 173.
 [2.2 <./images/type12_hyper.png>]
-<images/1.png, id=224, 469.098pt x 249.66pt>
+<images/1.png, id=225, 469.098pt x 249.66pt>
 File: images/1.png Graphic file (type png)
 <use images/1.png>
-Package pdftex.def Info: images/1.png  used on input line 199.
+Package pdftex.def Info: images/1.png  used on input line 201.
 (pdftex.def)             Requested size: 243.14749pt x 129.40489pt.
 
 
-Class acmart Warning: A possible image without description on input line 202.
+Class acmart Warning: A possible image without description on input line 204.
 
 
 
-<images/2.png, id=225, 471.507pt x 299.592pt>
+<images/2.png, id=226, 471.507pt x 299.592pt>
 File: images/2.png Graphic file (type png)
 <use images/2.png>
-Package pdftex.def Info: images/2.png  used on input line 223.
+Package pdftex.def Info: images/2.png  used on input line 226.
 (pdftex.def)             Requested size: 243.14749pt x 154.49501pt.
 
-Class acmart Warning: A possible image without description on input line 226.
+Class acmart Warning: A possible image without description on input line 229.
 
 
 
 [3.3 <./images/1.png>]
-<images/3.png, id=232, 471.507pt x 357.627pt>
+<images/3.png, id=233, 471.507pt x 357.627pt>
 File: images/3.png Graphic file (type png)
 <use images/3.png>
-Package pdftex.def Info: images/3.png  used on input line 244.
+Package pdftex.def Info: images/3.png  used on input line 247.
 (pdftex.def)             Requested size: 243.14749pt x 184.42279pt.
 
 
-Class acmart Warning: A possible image without description on input line 247.
+Class acmart Warning: A possible image without description on input line 250.
 
 
 
 
-Overfull \hbox (8.00592pt too wide) in paragraph at lines 272--273
-[]\T1/LinuxLibertineT-TLF/b/n/9 (-20) Trusted Ex-e-cu-tion En-vi-ron-ment: \T1/LinuxLibertineT-TLF/m/n/9 (-20) Trusted Ap-pli-ca-tion Bench-
+Overfull \hbox (4.30661pt too wide) in paragraph at lines 261--262
+\T1/LinuxLibertineT-TLF/m/n/9 (-20) bust iso-la-tion, thereby mak-ing it a ver-sa-tile tool to ad-vance TrustZone-
  []
 
 
 
 [4.4 <./images/2.png> <./images/3.png>]
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 304.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 307.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 304.
+(Font)              scaled to size 9.0pt on input line 307.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 342.
+
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 344.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 8.0pt on input line 342.
+(Font)              scaled to size 8.0pt on input line 344.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 [5.5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}]
@@ -1264,12 +1263,12 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 423.
+LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 426.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
 File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 8.0pt on input line 423.
+(Font)              scaled to size 8.0pt on input line 426.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1278,6 +1277,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 [6.6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
 
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 533.
 
 
 [7.7]
@@ -1290,14 +1291,16 @@ LaTeX Info: Redefining \tempurl on input line 82.
 LaTeX Info: Redefining \tempurl on input line 96.
 LaTeX Info: Redefining \tempurl on input line 107.
 LaTeX Info: Redefining \tempurl on input line 119.
-
-
-[8.8]
 LaTeX Info: Redefining \tempurl on input line 136.
 LaTeX Info: Redefining \tempurl on input line 146.
 LaTeX Info: Redefining \tempurl on input line 157.
 LaTeX Info: Redefining \tempurl on input line 176.
-)
+
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+
+
+[8.8])
 
 Class acmart Warning: Some images may lack descriptions.
 
@@ -1311,7 +1314,13 @@ Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
 
 
-(/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+
+Overfull \vbox (1.5pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (1.16599pt too high) has occurred while \output is active []
+
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
@@ -1325,21 +1334,21 @@ L3 programming layer <2024-09-10>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 7C00F3DBBE18EBC1353B6D7E9CF67454;6886.
+(rerunfilecheck)             Checksum: 67BA79BAB2869DFE56C474127CBBDA83;6866.
  ) 
 Here is how much of TeX's memory you used:
- 33274 strings out of 473579
- 591648 string characters out of 5728233
- 1263752 words of memory out of 5000000
- 54749 multiletter control sequences out of 15000+600000
- 732554 words of font info for 455 fonts, out of 8000000 for 9000
+ 33277 strings out of 473579
+ 591731 string characters out of 5728233
+ 1267562 words of memory out of 5000000
+ 54751 multiletter control sequences out of 15000+600000
+ 737781 words of font info for 454 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,13n,131p,1246b,2157s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on report.pdf (9 pages, 912303 bytes).
+ 90i,13n,131p,1250b,2155s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumTI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on report.pdf (9 pages, 946175 bytes).
 PDF statistics:
- 453 PDF objects out of 1000 (max. 8388607)
- 411 compressed objects within 5 object streams
- 154 named destinations out of 1000 (max. 500000)
- 96049 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 460 PDF objects out of 1000 (max. 8388607)
+ 416 compressed objects within 5 object streams
+ 155 named destinations out of 1000 (max. 500000)
+ 100145 words of extra memory for PDF output out of 106986 (max. 10000000)
 
