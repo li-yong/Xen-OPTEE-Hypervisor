@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.18)  12 DEC 2024 05:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.18)  18 DEC 2024 09:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1145,130 +1145,137 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 102.
+(Font)              scaled to size 9.0pt on input line 99.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 9.0pt on input line 102.
+(Font)              scaled to size 9.0pt on input line 99.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 9.0pt on input line 102.
+(Font)              scaled to size 9.0pt on input line 99.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 9.0pt on input line 102.
+(Font)              scaled to size 9.0pt on input line 99.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 9.0pt on input line 102.
+(Font)              scaled to size 9.0pt on input line 99.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 9.0pt on input line 102.
+(Font)              scaled to size 9.0pt on input line 99.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 9.0pt on input line 102.
+(Font)              scaled to size 9.0pt on input line 99.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 9.0pt on input line 102.
+(Font)              scaled to size 9.0pt on input line 99.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 103.
+(Font)              scaled to size 9.0pt on input line 100.
+
+Underfull \vbox (badness 1769) has occurred while \output is active []
+
 
 
 [1.1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_afusau.enc}
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}]
-<images/type12_hyper.png, id=192, 529.104pt x 268.713pt>
+<images/type12_hyper.png, id=193, 529.104pt x 268.713pt>
 File: images/type12_hyper.png Graphic file (type png)
 <use images/type12_hyper.png>
-Package pdftex.def Info: images/type12_hyper.png  used on input line 132.
+Package pdftex.def Info: images/type12_hyper.png  used on input line 129.
 (pdftex.def)             Requested size: 243.14749pt x 123.48647pt.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 133.
+(Font)              scaled to size 8.0pt on input line 130.
 
 
-Class acmart Warning: A possible image without description on input line 135.
+Class acmart Warning: A possible image without description on input line 132.
 
 
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 155.
+(Font)              scaled to size 9.0pt on input line 152.
 
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 173.
+(Font)              scaled to size 7.0pt on input line 169.
 LaTeX Font Info:    Font shape `TS1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 173.
+(Font)              scaled to size 7.0pt on input line 169.
 [2.2 <./images/type12_hyper.png>]
-<images/1.png, id=225, 469.098pt x 249.66pt>
+<images/1.png, id=226, 469.098pt x 249.66pt>
 File: images/1.png Graphic file (type png)
 <use images/1.png>
-Package pdftex.def Info: images/1.png  used on input line 201.
+Package pdftex.def Info: images/1.png  used on input line 198.
 (pdftex.def)             Requested size: 243.14749pt x 129.40489pt.
 
 
-Class acmart Warning: A possible image without description on input line 204.
+Class acmart Warning: A possible image without description on input line 201.
+
+
+Underfull \vbox (badness 4673) has occurred while \output is active []
 
 
 
-<images/2.png, id=226, 471.507pt x 299.592pt>
+<images/2.png, id=227, 471.507pt x 299.592pt>
 File: images/2.png Graphic file (type png)
 <use images/2.png>
-Package pdftex.def Info: images/2.png  used on input line 226.
+Package pdftex.def Info: images/2.png  used on input line 223.
 (pdftex.def)             Requested size: 243.14749pt x 154.49501pt.
 
-Class acmart Warning: A possible image without description on input line 229.
+Class acmart Warning: A possible image without description on input line 226.
 
 
 
 [3.3 <./images/1.png>]
-<images/3.png, id=233, 471.507pt x 357.627pt>
+<images/3.png, id=234, 471.507pt x 357.627pt>
 File: images/3.png Graphic file (type png)
 <use images/3.png>
-Package pdftex.def Info: images/3.png  used on input line 247.
+Package pdftex.def Info: images/3.png  used on input line 244.
 (pdftex.def)             Requested size: 243.14749pt x 184.42279pt.
 
 
-Class acmart Warning: A possible image without description on input line 250.
+Class acmart Warning: A possible image without description on input line 247.
 
 
 
 
-Overfull \hbox (4.30661pt too wide) in paragraph at lines 261--262
+Overfull \hbox (4.30661pt too wide) in paragraph at lines 258--259
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) bust iso-la-tion, thereby mak-ing it a ver-sa-tile tool to ad-vance TrustZone-
  []
 
 
 
 [4.4 <./images/2.png> <./images/3.png>]
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 307.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 304.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 307.
+(Font)              scaled to size 9.0pt on input line 304.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
-
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 344.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 341.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 8.0pt on input line 344.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              scaled to size 8.0pt on input line 341.
 
 
 [5.5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}]
+Underfull \vbox (badness 5563) has occurred while \output is active []
+
+
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 426.
+LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 423.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
 File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 8.0pt on input line 426.
+(Font)              scaled to size 8.0pt on input line 423.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1278,7 +1285,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 [6.6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 533.
+(Font)              scaled to size 9.0pt on input line 530.
 
 
 [7.7]
@@ -1293,14 +1300,12 @@ LaTeX Info: Redefining \tempurl on input line 107.
 LaTeX Info: Redefining \tempurl on input line 119.
 LaTeX Info: Redefining \tempurl on input line 136.
 LaTeX Info: Redefining \tempurl on input line 146.
+
+
+[8.8]
 LaTeX Info: Redefining \tempurl on input line 157.
 LaTeX Info: Redefining \tempurl on input line 176.
-
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
-
-
-[8.8])
+)
 
 Class acmart Warning: Some images may lack descriptions.
 
@@ -1315,10 +1320,7 @@ Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
 
 
-Overfull \vbox (1.5pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (1.16599pt too high) has occurred while \output is active []
+Overfull \vbox (1.152pt too high) has occurred while \output is active []
 
  (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -1339,16 +1341,16 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 Here is how much of TeX's memory you used:
  33277 strings out of 473579
  591731 string characters out of 5728233
- 1267562 words of memory out of 5000000
+ 1262945 words of memory out of 5000000
  54751 multiletter control sequences out of 15000+600000
  737781 words of font info for 454 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,13n,131p,1250b,2155s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,13n,131p,1250b,1570s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumTI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on report.pdf (9 pages, 946175 bytes).
+Output written on report.pdf (9 pages, 946560 bytes).
 PDF statistics:
- 460 PDF objects out of 1000 (max. 8388607)
- 416 compressed objects within 5 object streams
+ 461 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
  155 named destinations out of 1000 (max. 500000)
  100145 words of extra memory for PDF output out of 106986 (max. 10000000)
 

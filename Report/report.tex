@@ -76,8 +76,6 @@
 
 \section{Introduction}
 
-
-
 \subsection{Literature Review}
 
 TEEs combined with virtualization platforms have become increasingly popular over the past years. One such hardware-based TEE is ARM TrustZone, which provides a safe haven for sensitive operations. However, its integration into virtualized systems is still an underexplored area. This section discusses some key contributions in this domain and highlights how our solution stands out.
@@ -87,8 +85,7 @@ Harrison et al. proposed PARTEMU, a modular framework for emulating TrustZone so
 
 Yang and Lee used OP-TEE with QEMU to implement TEE Client APIs between the Normal World and Secure World \cite{10.1145/3426020.3426113}. In their work, they have provided a good starting point for security research. Their solution has again been designed for a single-system setup and does not extend the virtualization capability.\cite{10274941} \cite{10.1145/3426020.3426113} \cite{8352425}
 
-Our approach extends these efforts further by incorporating ARM TrustZone into a Xen-based virtualized environment. Unlike TEEv, which focuses on multi-TEE scenarios, our work focuses on taking advantage of TrustZone in order to provide secure services in a single TEE architecture. Finally, QEMU emulates the ARM platforms for ease of debugging, testing, and performance benchmarking. Using QEMU together with Xen in this context provides an extended framework for exploring and enhancing TrustZone's potential in virtualized embedded systems.
-
+Our approach extends these efforts further by incorporating ARM TrustZone into a Xen-based virtualized environment. Unlike TEEv, which focuses on multi-TEE scenarios, our work focuses on taking advantage of TrustZone in order to provide secure services in a single TEE architecture. Finally, QEMU emulates the ARM platforms for ease of debugging, testing, and performance benchmarking. Using QEMU together with Xen in this context provides an extended framework for exploring and enhancing TrustZone's potential in virtualized embedded systems. The step-by-step procedure, along with supporting resources, is maintained on the \href{https://github.com/li-yong/Xen-OPTEE-Hypervisor}{Github}. 
 
 
 \subsection{Motivation}

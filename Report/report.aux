@@ -20,7 +20,6 @@
 \citation{efficient_virtualization,partemu,qemu_fast_portable}
 \citation{10.5555/1247360.1247401}
 \citation{efficient_virtualization}
-\citation{qemu_fast_portable}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}ARM TrustZone Technology}{2}{subsection.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Comparison of Hypervisor Architectures}{2}{subsection.2.2}\protected@file@percent }
@@ -32,12 +31,13 @@
 \@writefile{toc}{\contentsline {paragraph}{This Project's Hypervisor Architecture:}{2}{section*.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Advantages of This Project's Architecture:}{2}{section*.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}QEMU: A System Emulator}{2}{subsection.2.3}\protected@file@percent }
+\citation{qemu_fast_portable}
 \citation{partemu}
 \@writefile{toc}{\contentsline {section}{\numberline {3}System Design: Introduction to the Virtualization Stack}{3}{section.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Step 1: Bare Metal Machine. OS directly running on ARM CPU}{3}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Step 2: Virtualize the OS by introducing Hypervisor}{3}{subsection.3.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces ARM Trusted App, no virtualization}}{3}{figure.caption.7}\protected@file@percent }
 \newlabel{fig:image_label}{{2}{3}{ARM Trusted App, no virtualization}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Step 2: Virtualize the OS by introducing Hypervisor}{3}{subsection.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Step 3: Virtualizing the ARM CPU by QEMU}{3}{subsection.3.3}\protected@file@percent }
 \citation{obrezkov2019xen}
 \citation{optee_docs}
@@ -64,7 +64,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}BusyBox Hardware Acceleration Compatibility}{6}{subsection.6.1}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces Solution to HWA Fault}}{6}{lstlisting.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}BusyBox Compilation Failure with Traffic Control Utility}{6}{subsection.6.2}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}{\ignorespaces Failure on compile BusyBox}}{6}{lstlisting.4}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}{\ignorespaces Failure on compile BusyBox}}{7}{lstlisting.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Root Cause:}{7}{section*.12}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {5}{\ignorespaces Solution to Disable Traffic Control}}{7}{lstlisting.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3}QEMU stuck on loading unsupported GPIO module}{7}{subsection.6.3}\protected@file@percent }
@@ -75,7 +75,6 @@
 \@writefile{toc}{\contentsline {paragraph}{QEMU Start Command}{7}{section*.14}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {8}{\ignorespaces Designed Device Layout}}{7}{lstlisting.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.1}Scaling with larger Linux Images}{7}{subsubsection.6.4.1}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}{\ignorespaces U-Boot error due to different image size}}{7}{lstlisting.9}\protected@file@percent }
 \bibstyle{ACM-Reference-Format}
 \bibdata{references}
 \bibcite{10.1007/978-3-030-22496-7_9}{{1}{2019}{{Amacher and Schiavoni}}{{}}}
@@ -89,14 +88,15 @@
 \bibcite{efficient_virtualization}{{9}{2009}{{Liebergeld}}{{}}}
 \bibcite{10274941}{{10}{2023}{{Mantu et~al\mbox  {.}}}{{}}}
 \bibcite{obrezkov2019xen}{{11}{2019}{{Obrezkov}}{{}}}
-\bibcite{7005255}{{12}{2014}{{Pinto et~al\mbox  {.}}}{{}}}
-\bibcite{10.1007/978-3-642-32298-3_1}{{13}{2012}{{Winter et~al\mbox  {.}}}{{}}}
-\bibcite{10.1145/3426020.3426113}{{14}{2021}{{Yang and Lee}}{{}}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}{\ignorespaces U-Boot error due to different image size}}{8}{lstlisting.9}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {10}{\ignorespaces Solution to U-Boot error}}{8}{lstlisting.10}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7}Limitation}{8}{section.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {8}Future Work}{8}{section.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{8}{section.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{References}{8}{section*.16}\protected@file@percent }
+\bibcite{7005255}{{12}{2014}{{Pinto et~al\mbox  {.}}}{{}}}
+\bibcite{10.1007/978-3-642-32298-3_1}{{13}{2012}{{Winter et~al\mbox  {.}}}{{}}}
+\bibcite{10.1145/3426020.3426113}{{14}{2021}{{Yang and Lee}}{{}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{4.185pt}
