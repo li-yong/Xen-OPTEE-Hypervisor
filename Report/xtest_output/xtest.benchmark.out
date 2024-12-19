@@ -1,0 +1,83 @@
+Run test suite with level=0
+
+TEE test application started over default TEE instance
+######################################################
+#
+# benchmark
+#
+######################################################
+ 
+* benchmark_1001 TEE Trusted Storage Performance Test (WRITE)
+-----------------+---------------+----------------
+ Data Size (B) 	 | Time (s)	 | Speed (kB/s)	 
+-----------------+---------------+----------------
+      256 	 |    0.039 	 |    6.410
+      512 	 |    0.034 	 |   14.706
+     1024 	 |    0.035 	 |   28.571
+     2048 	 |    0.070 	 |   28.571
+     4096 	 |    0.177 	 |   22.599
+    16384 	 |    0.667 	 |   23.988
+   524288 	 |   27.341 	 |   18.726
+  1048576 	 |   59.915 	 |   17.091
+-----------------+---------------+----------------
+  benchmark_1001 OK
+ 
+* benchmark_1002 TEE Trusted Storage Performance Test (READ)
+-----------------+---------------+----------------
+ Data Size (B) 	 | Time (s)	 | Speed (kB/s)	 
+-----------------+---------------+----------------
+      256 	 |    0.005 	 |   50.000
+      512 	 |    0.004 	 |  125.000
+     1024 	 |    0.005 	 |  200.000
+     2048 	 |    0.008 	 |  250.000
+     4096 	 |    0.020 	 |  200.000
+    16384 	 |    0.082 	 |  195.122
+   524288 	 |    3.098 	 |  165.268
+  1048576 	 |    7.588 	 |  134.950
+-----------------+---------------+----------------
+  benchmark_1002 OK
+ 
+* benchmark_1003 TEE Trusted Storage Performance Test (REWRITE)
+-----------------+---------------+----------------
+ Data Size (B) 	 | Time (s)	 | Speed (kB/s)	 
+-----------------+---------------+----------------
+      256 	 |    0.076 	 |    3.289
+      512 	 |    0.049 	 |   10.204
+     1024 	 |    0.043 	 |   23.256
+     2048 	 |    0.099 	 |   20.202
+     4096 	 |    0.220 	 |   18.182
+    16384 	 |    2.523 	 |    6.342
+   524288 	 |   28.737 	 |   17.817
+  1048576 	 |   63.525 	 |   16.120
+-----------------+---------------+----------------
+  benchmark_1003 OK
+ 
+* benchmark_2001 TEE SHA Performance test (TA_SHA_SHA1)
+min=1204.22us max=19558.2us mean=2024.12us stddev=650.444us (cv 32.1346%) (0.482462MiB/s)
+  benchmark_2001 OK
+ 
+* benchmark_2002 TEE SHA Performance test (TA_SHA_SHA226)
+min=1148.74us max=4659.68us mean=1761.1us stddev=387.347us (cv 21.9946%) (2.21807MiB/s)
+  benchmark_2002 OK
+ 
+* benchmark_2011 TEE AES Performance test (TA_AES_ECB)
+min=1038.03us max=11784.4us mean=1601.79us stddev=369.229us (cv 23.0511%) (0.609671MiB/s)
+  benchmark_2011 OK
+ 
+* benchmark_2012 TEE AES Performance test (TA_AES_CBC)
+min=1013.52us max=5458.66us mean=1558.43us stddev=304.516us (cv 19.5399%) (0.626631MiB/s)
+  benchmark_2012 OK
++-----------------------------------------------------
+Result of testsuite benchmark:
+benchmark_1001 OK
+benchmark_1002 OK
+benchmark_1003 OK
+benchmark_2001 OK
+benchmark_2002 OK
+benchmark_2011 OK
+benchmark_2012 OK
++-----------------------------------------------------
+24 subtests of which 0 failed
+7 test cases of which 0 failed
+0 test cases were skipped
+TEE test application done!
