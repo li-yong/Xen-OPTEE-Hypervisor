@@ -82,7 +82,7 @@ In this setup, running `make toolchains` is essential because the development ma
 
 ```
 cd ${OPTEE_WORK_DIR}/build
-make -j `nproc` toolchains
+make XEN_BOOT=y -j `nproc` toolchains
 ```
 
 
@@ -90,13 +90,13 @@ Runs the `make` command to check the build environment, utilizing all available 
 
 Together, these commands set up and verify the OP-TEE build environment.
 ```
-make -j `nproc` check
+make XEN_BOOT=y  -j `nproc` check
 ```
 
 ## Build Everything
 This will spend significant time comparing to the previous steps, as it is actually build and install the `all` target. QEMU, ARM-TF (ARM TrustFirmware), Linux, OPTEE-OS, U-Boot will be compiled and installed in this step.
 ```
-make -j `nproc`
+make XEN_BOOT=y -j `nproc`
 ```
 
 <!-- ### Performance Benchmark consideration

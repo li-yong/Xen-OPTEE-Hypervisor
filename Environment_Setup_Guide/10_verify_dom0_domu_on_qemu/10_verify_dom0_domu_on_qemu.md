@@ -61,7 +61,7 @@ fdt set /chosen/domU1/module@0 compatible "multiboot,kernel" "multiboot,module"
 fdt set /chosen/domU1/module@0 reg <0x53000000 0x237ea00>
 fdt set /chosen/domU1/module@0 bootargs "rw root=/dev/ram rdinit=/sbin/init console=ttyAMA0"
 
-fdt resize
+fdt resize   #<<<< add `fdt resize` before mknod if `FDT_ERR_NOSPACE`.
 fdt mknod /chosen/domU1 module@1
 fdt set /chosen/domU1/module@1 compatible "multiboot,ramdisk" "multiboot,module"
 fdt set /chosen/domU1/module@1 reg <0x58000000 0x122a54>
