@@ -14,7 +14,7 @@ The key software components used in our implementation include:
 
 ## OPTEE_Approach: OP-TEE offers `make` project to build the stack.
 
-
+## Stack Diagrams
 ![screenshot](images/type12_hyper.png)
 
 
