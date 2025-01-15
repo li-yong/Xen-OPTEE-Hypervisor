@@ -4,5 +4,5 @@ QEMU_XEN_Uboot_Linux_Approach: An updated version based on [Medium Article on Xe
 
 OPTEE_Approach: OP-TEE offers `make` project to build the stack.
 
-![screenshot](images/1.png)
+![screenshot](images/optee_virtual_arch.png)
 
